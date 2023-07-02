@@ -43,4 +43,11 @@ const ImgBox = styled.img`
 width:50%;`
 
 const Frame = styled.div`
-width:50%;`
+width:50%;
+display: flex;
+padding: 0px 20px;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+flex-shrink: 0;
+align-self: stretch;`
