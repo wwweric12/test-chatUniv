@@ -7,6 +7,7 @@ import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Test from "./assets/pages/Chat/Test";
 
+
 const App = () => {
   return (
     <>
@@ -66,5 +67,5 @@ const Frame = styled.div`
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  background-color: ${Theme.colors.WHITE};
+  background-color: ${({ theme }) => theme.colors.WHITE};
 `;
