@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import CommentForm from "./CommentForm";
 
 const Comment = () => {
   return (
@@ -9,6 +10,7 @@ const Comment = () => {
           댓글
         </TxtComment>
       </TxtBox>
+      <CommentForm />
     </Layout>
   );
 }
