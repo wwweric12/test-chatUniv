@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import { Theme } from "../../styles/Theme";
 import make_board from "../images/make_board.svg";
 import make_chatting from "../images/make_chatting.svg";
+
+/* 
+   <SmallButton text="채팅방 만들기" type="chatting" /> 이런식으로 사용하시면 됩니다.
+*/
 
 const SmallButton = ({ text, type }) => {
   return (
@@ -16,10 +19,6 @@ const SmallButton = ({ text, type }) => {
   );
 };
 
-/* 
-   <SmallButton text="채팅방 만들기" type="chatting" /> 이런식으로 사용하시면 됩니다.
-*/
-
 export default SmallButton;
 
 const Button = styled.button`
@@ -33,7 +32,7 @@ const Button = styled.button`
   line-height: 20px;
   font-weight: 400;
   box-shadow: 0px 4px 4px 0px #00000040;
-  background-color: ${Theme.colors.PURPLE10};
+  background-color: ${({ theme }) => theme.colors.PURPLE10};
   &:hover {
     cursor: pointer;
   }

@@ -3,12 +3,10 @@ import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
 import IntroductionSrc from "./assets/images/introduction.svg";
 import Header from "./assets/component/Header";
-import GlobalStyle from "../src/styles/GlobalStyle";
 const App = () => {
   return (
     <>
       <ThemeProvider theme={Theme}>
-        <GlobalStyle />
         <Layout>
           <InLayout>
             <ImgBox alt="back_Introduction" src={IntroductionSrc} />
