@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CommentForm from "./CommentForm";
+import CommentList from "./CommentList";
 
 const Comment = () => {
   return (
@@ -11,6 +12,7 @@ const Comment = () => {
         </TxtComment>
       </TxtBox>
       <CommentForm />
+      <CommentList/>
     </Layout>
   );
 }

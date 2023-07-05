@@ -50,6 +50,7 @@ const Commentinput = styled.textarea`
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
   resize: none;
   overflow: auto;
+  color: ${({ theme }) => theme.colors.BLACK};
 
   &:focus{
     outline: none;
