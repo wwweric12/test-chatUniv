@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import close from "../../images/modal_close.svg";
 
-const WritePost = () => {
+const WritePost = ({ closeBtn, completeBtn }) => {
   return (
     <Container>
       <Header>
-        <CancelButton src={close} alt="close_button"></CancelButton>
+        <CancelButton onClick={closeBtn}>
+          <img src={close} alt="close_button" />
+        </CancelButton>
         <Letter>게시글 작성하기</Letter>
       </Header>
       <ContentContainer>
@@ -15,7 +17,7 @@ const WritePost = () => {
         </ContentBox>
       </ContentContainer>
       <Footer>
-        <Button>완료</Button>
+        <Button onClick={completeBtn}>완료</Button>
       </Footer>
     </Container>
   );
@@ -42,12 +44,9 @@ const Header = styled.div`
   border-bottom: 1px solid #d3d3d3;
 `;
 
-const CancelButton = styled.img`
+const CancelButton = styled.button`
   width: 25px;
   height: 25px;
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 const Letter = styled.div`
