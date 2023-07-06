@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import userSrc from "../images/user.svg";
 import sendSrc from "../images/send.svg";
 
 const CommentForm = () => {
+  const [content, setContent] = useState("");
+
   return (
     <Layout>
       <img alt="user" src={userSrc} />
       <CommentFormBox>
         <Commentinput
           type="text"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
         />
-        <SendBox>
-          <div type="submit">
-            <img alt="send" src={sendSrc} />
-          </div>
+        <SendBox type="submit">
+          <img alt="send" src={sendSrc} />
         </SendBox>
       </CommentFormBox>
     </Layout>
@@ -40,7 +42,7 @@ const CommentFormBox = styled.form`
   overflow: auto;
 `
 
-const Commentinput = styled.textarea`
+const Commentinput = styled.input`
   display: flex;
   height: 30px;
   align-items: flex-start;
@@ -48,8 +50,6 @@ const Commentinput = styled.textarea`
   flex: 1 0 0;
   border: none;
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
-  resize: none;
-  overflow: auto;
   color: ${({ theme }) => theme.colors.BLACK};
 
   &:focus{
