@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import { Theme } from "../../styles/Theme";
 import mypageSrc from "../images/mypage.svg";
 
 const Header = () => {
@@ -34,7 +32,7 @@ padding: 15px 10px;
 justify-content: space-between;
 align-items: center;
 align-self: stretch;
-background-color: ${Theme.colors.WHITE};
+background-color: ${({ theme }) => theme.colors.WHITE};
 `
 
 const LogoBox = styled.div`
@@ -45,7 +43,7 @@ gap: 10px;
 `
 
 const Logo = styled.div`
-color: ${Theme.colors.BLACK};
+color: ${({ theme }) => theme.colors.BLACK};
 font-size: 24px;
 font-style: normal;
 font-weight: 600;
@@ -57,7 +55,7 @@ display: flex;
 padding: 5px;
 align-items: center;
 gap: 20px;
-color: ${Theme.colors.PURPLE100};
+color: ${({ theme }) => theme.colors.PURPLE100};
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
