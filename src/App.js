@@ -7,7 +7,6 @@ import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Test from "./assets/pages/Chat/Test";
 
-
 const App = () => {
   return (
     <>
