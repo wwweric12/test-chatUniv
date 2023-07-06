@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function Footer() {
+const Footer = () => {
   const location = useLocation();
   const [pathName, setPathName] = useState("");
 
@@ -50,8 +50,8 @@ export default function Footer() {
       </Link>
     </FooterContainer>
   );
-}
-
+};
+export default Footer;
 const FooterContainer = styled.div`
   width: 100%;
   display: flex;

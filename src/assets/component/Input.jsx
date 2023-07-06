@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Input({ placeholder, type, register, inputId }) {
+const Input = ({ placeholder, type, register, inputId }) => {
   return (
     <InputContainer>
       <InputBox
@@ -11,7 +11,8 @@ export default function Input({ placeholder, type, register, inputId }) {
       />
     </InputContainer>
   );
-}
+};
+export default Input;
 
 const InputContainer = styled.div`
   width: 100%;
