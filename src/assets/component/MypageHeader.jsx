@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import { Theme } from "../../styles/Theme";
 import goBackSrc from "../images/goBack.svg";
 
 const MypageHeader = ({ title }) => {
@@ -30,7 +28,7 @@ const Layout = styled.div`
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
-  background-color: ${Theme.colors.WHITE};
+  background-color: ${({ theme }) => theme.colors.WHITE};
 `
 
 const TitleBox = styled.div`
@@ -46,7 +44,7 @@ const Title = styled.div`
   padding: 10px;
   align-items: flex-start;
   gap: 10px;
-  color: ${Theme.colors.BLACK};
+  color: ${({ theme }) => theme.colors.BLACK};
   font-size: 20px;
   font-style: normal;
   font-weight: 400;

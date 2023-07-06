@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import userSrc from "../images/user.svg";
 import sendSrc from "../images/send.svg";
@@ -58,7 +58,7 @@ const Commentinput = styled.input`
   }
 `
 
-const SendBox = styled.div`
+const SendBox = styled.button`
   display: flex;
   justify-content: center;
   align-items: flex-end;
