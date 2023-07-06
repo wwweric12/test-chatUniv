@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import ChatList from "../../component/ChatList";
 
 export default function Test() {
-  return <Container>ASFds</Container>;
+  return (
+    <Container>
+      <ChatList page="mypage" />
+    </Container>
+  );
 }
 
 const Container = styled.div`
