@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import Send from "../images/send.svg";
 
-const ChatList = ({ title, content, page }) => {
-  const handleChatDelete = () => {};
-  const handleSend = () => {};
+const ChatList = ({ title, content, page, handleChatDelete, handleSend }) => {
   return (
     <ChatListContainer>
       <ChatListTitle>
