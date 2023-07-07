@@ -32,7 +32,7 @@ const Button = styled.button`
   line-height: 20px;
   font-weight: 400;
   box-shadow: 0px 4px 4px 0px #00000040;
-  background-color: ${({ theme }) => theme.colors.PURPLE10};
+  background-color: ${({ theme }) => theme.colors.WHITE};
   &:hover {
     cursor: pointer;
   }
