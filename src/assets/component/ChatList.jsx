@@ -14,9 +14,9 @@ const ChatList = ({ title, content, page, handleChatDelete, handleSend }) => {
         {page === "mypage" ? (
           <ChatInputBox>
             <ChatInput />
-            <SendBtn onClick={handleSend}>
+            <button onClick={handleSend}>
               <img src={Send} alt="send-img" />
-            </SendBtn>
+            </button>
           </ChatInputBox>
         ) : (
           content
@@ -74,8 +74,4 @@ const ChatInput = styled.input`
   width: 100%;
   font-size: 16px;
   border: none;
-`;
-
-const SendBtn = styled.button`
-  border: 1px solid black;
 `;

@@ -5,7 +5,7 @@ import ChatList from "../../component/ChatList";
 export default function Test() {
   return (
     <Container>
-      <ChatList />
+      <ChatList page="mypage" />
     </Container>
   );
 }
