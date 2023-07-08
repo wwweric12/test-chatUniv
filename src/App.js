@@ -5,8 +5,8 @@ import IntroductionSrc from "./assets/images/introduction.svg";
 import Header from "./assets/component/Header";
 import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Test from "./assets/pages/Chat/Test";
 import Post from "./assets/pages/Board/Post";
+import Main from "./assets/pages/Main/Main";
 
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
 
                 <Routes>
                   <Route path="/board" element={<Post />} />
-                  <Route path="/" element={<Test />} />
+                  <Route path="/" element={<Main />} />
                 </Routes>
 
                 <Footer />
