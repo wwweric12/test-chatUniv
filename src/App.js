@@ -10,6 +10,7 @@ import Main from "./assets/pages/Main/Main";
 
 
 const App = () => {
+
   return (
     <>
       <ThemeProvider theme={Theme}>
@@ -47,6 +48,7 @@ const Layout = styled.div`
     rgba(191, 48, 226, 0.3) 0%,
     rgba(191, 48, 226, 0) 100%
   );
+  height: 100vh;
 `;
 
 const InLayout = styled.div`
@@ -55,6 +57,7 @@ const InLayout = styled.div`
   align-items: flex-start;
   flex-shrink: 0;
   align-self: stretch;
+  height: 100vh;
 `;
 
 const ImgBox = styled.img`
@@ -70,4 +73,5 @@ const Frame = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   background-color: ${({ theme }) => theme.colors.WHITE};
+  height: 100vh;
 `;

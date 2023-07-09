@@ -1,8 +1,23 @@
 import styled from "styled-components";
 import SmallButton from "../../component/SmallButton";
 import Search from "../../component/Search";
+import { useState, useEffect } from "react";
 
 const Main = () => {
+  const [layoutHeight, setLayoutHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setLayoutHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const dataContents = [
     {
       id: "0",
@@ -22,12 +37,18 @@ const Main = () => {
       content: "text3",
       date: "2023.07.06 23:11",
     },
+    {
+      id: "3",
+      title: "title4",
+      content: "text4",
+      date: "2023.07.06 23:11",
+    },
   ];
 
   return (
-    <Layout>
+    <Layout height={layoutHeight-136}>
       <InLayout>
-        
+
         <Search />
 
         <ListBox>
@@ -60,14 +81,14 @@ export default Main;
 
 const Layout = styled.div`
   display: flex;
-  padding: 0px 10px 25px 10px;
+  padding: 0px 10px 10px 10px;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  height: 100%;
-`
+  height: ${props => props.height}px;
+`;
 
 const InLayout = styled.div`
   display: flex;
@@ -76,15 +97,16 @@ const InLayout = styled.div`
   align-items: center;
   gap: 20px;
   align-self: stretch;
+  height: 88%;
 `
 
 const BLayout = styled.div`
+  height: 12%;
   display: flex;
-  padding: 0px 10px 15px 10px;
+  padding: 0px;
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  align-self: stretch;
 `
 
 const ListBox = styled.div`
@@ -94,7 +116,16 @@ const ListBox = styled.div`
   align-items: flex-start;
   gap: 15px;
   align-self: stretch;
-`
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+`;
+
 
 const ChatBox = styled.div`
   display: flex;
