@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SmallButton from "../../component/SmallButton";
+import Search from "../../component/Search";
 
 const Main = () => {
   const dataContents = [
@@ -27,7 +28,7 @@ const Main = () => {
     <Layout>
       <InLayout>
         
-        검색창
+        <Search />
 
         <ListBox>
           {
