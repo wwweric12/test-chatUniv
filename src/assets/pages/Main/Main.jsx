@@ -46,7 +46,7 @@ const Main = () => {
   ];
 
   return (
-    <Layout height={layoutHeight-136}>
+    <Layout height={layoutHeight - 136}>
       <InLayout>
 
         <Search />
@@ -97,11 +97,11 @@ const InLayout = styled.div`
   align-items: center;
   gap: 20px;
   align-self: stretch;
-  height: 88%;
+  height: 90%;
 `
 
 const BLayout = styled.div`
-  height: 12%;
+  height: 10%;
   display: flex;
   padding: 0px;
   flex-direction: column;
