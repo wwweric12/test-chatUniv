@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import SmallButton from "../../component/SmallButton";
-import Search from "../../component/Search";
 
 const Main = () => {
   const dataContents = [
@@ -28,7 +27,7 @@ const Main = () => {
     <Layout>
       <InLayout>
         
-        <Search />
+        검색창
 
         <ListBox>
           {
@@ -66,6 +65,7 @@ const Layout = styled.div`
   align-items: flex-start;
   flex: 1 0 0;
   align-self: stretch;
+  height: 100%;
 `
 
 const InLayout = styled.div`
