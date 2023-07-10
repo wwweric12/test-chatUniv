@@ -107,6 +107,7 @@ const BLayout = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  z-index: 100;
 `
 
 const ListBox = styled.div`
