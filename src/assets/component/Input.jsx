@@ -6,7 +6,7 @@ const Input = ({ placeholder, type, register, inputId }) => {
       <InputBox
         placeholder={placeholder}
         type={type}
-        // {...register(inputId)}
+        {...register(inputId)}
         id={inputId}
       />
     </InputContainer>
