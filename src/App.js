@@ -62,6 +62,7 @@ const InLayout = styled.div`
 
 const ImgBox = styled.img`
   width: 50%;
+  height: 100vh;
 `;
 
 const Frame = styled.div`
