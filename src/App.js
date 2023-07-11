@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Test from "./assets/pages/Chat/Test";
 import Post from "./assets/pages/Board/Post";
 import Login from "./assets/pages/Login/Login";
+import Join from "./assets/pages/Join/Join";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
 
                 <Routes>
                   <Route path="/board" element={<Post />} />
-                  <Route path="/" element={<Login />} />
+                  <Route path="/" element={<Join />} />
                 </Routes>
 
                 <Footer />

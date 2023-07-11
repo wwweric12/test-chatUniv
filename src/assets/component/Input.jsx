@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const Input = ({ placeholder, type, register, inputId }) => {
+const Input = ({ placeholder, type, register, inputId, errorCheck }) => {
   return (
-    <InputContainer>
+    <InputContainer $isError={errorCheck}>
       <InputBox
         placeholder={placeholder}
         type={type}
@@ -19,7 +19,11 @@ const InputContainer = styled.div`
   height: 35px;
   padding: 7px 15px;
   border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.PURPLE70};
+  border: ${(props) => (props.$isError ? "2px" : "1px")} solid
+    ${(props) =>
+      props.$isError
+        ? props.theme.colors.PURPLE100
+        : props.theme.colors.PURPLE70};
 `;
 
 const InputBox = styled.input`
