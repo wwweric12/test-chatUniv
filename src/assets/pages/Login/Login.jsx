@@ -14,6 +14,8 @@ const Login = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(validation),
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
   });
   const onSubmit = (data) => {
     console.log(data);
