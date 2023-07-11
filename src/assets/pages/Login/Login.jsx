@@ -37,6 +37,7 @@ const Login = () => {
               type="email"
               register={register}
               inputId="email"
+              errorCheck={errors.email}
             />
           </InputBlock>
           <InputBlock>
@@ -45,6 +46,7 @@ const Login = () => {
               type="password"
               register={register}
               inputId="password"
+              errorCheck={errors.password}
             />
           </InputBlock>
           <LoginError>{handleErrorMessage()}</LoginError>
