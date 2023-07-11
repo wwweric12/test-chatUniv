@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Test from "./assets/pages/Chat/Test";
 import Post from "./assets/pages/Board/Post";
 
-
 const App = () => {
   return (
     <>
@@ -19,7 +18,6 @@ const App = () => {
               <ImgBox alt="back_Introduction" src={IntroductionSrc} />
               <Frame>
                 <Header />
-
                 <Routes>
                   <Route path="/board" element={<Post />} />
                   <Route path="/" element={<Test />} />
