@@ -5,10 +5,11 @@ import IntroductionSrc from "./assets/images/introduction.svg";
 import Header from "./assets/component/Header";
 import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Test from "./assets/pages/Chat/Test";
 import Post from "./assets/pages/Board/Post";
+import Main from "./assets/pages/Main/Main";
 
 const App = () => {
+
   return (
     <>
       <ThemeProvider theme={Theme}>
@@ -20,7 +21,7 @@ const App = () => {
                 <Header />
                 <Routes>
                   <Route path="/board" element={<Post />} />
-                  <Route path="/" element={<Test />} />
+                  <Route path="/" element={<Main />} />
                 </Routes>
 
                 <Footer />
@@ -45,6 +46,7 @@ const Layout = styled.div`
     rgba(191, 48, 226, 0.3) 0%,
     rgba(191, 48, 226, 0) 100%
   );
+  height: 100vh;
 `;
 
 const InLayout = styled.div`
@@ -53,10 +55,12 @@ const InLayout = styled.div`
   align-items: flex-start;
   flex-shrink: 0;
   align-self: stretch;
+  height: 100vh;
 `;
 
 const ImgBox = styled.img`
   width: 50%;
+  height: 100vh;
 `;
 
 const Frame = styled.div`
@@ -68,4 +72,5 @@ const Frame = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   background-color: ${({ theme }) => theme.colors.WHITE};
+  height: 100vh;
 `;
