@@ -1,33 +1,48 @@
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const Lanking = () => {
-  return(
+  const lankingData = [
+    { id: 1, content: "검색어1" },
+    { id: 2, content: "검색어2" },
+    { id: 3, content: "검색어3" },
+    { id: 4, content: "검색어4" },
+    { id: 5, content: "검색어5" },
+  ];
+
+  const location = useLocation();
+
+  const handleClick = (content) => {
+    const queryParams = new URLSearchParams(location.search);
+    queryParams.set("q", content);
+  
+    const searchParams = queryParams.toString();
+    const searchPath = `/?${searchParams}`;
+  
+    // 이동할 경로로 이동
+    window.location.href = searchPath;
+  };
+  
+  
+
+  return (
     <Layout>
       <TitleLayout>
-        <TitleBox>
-          명지대 실시간 랭킹
-        </TitleBox>
+        <TitleBox>명지대 실시간 랭킹</TitleBox>
       </TitleLayout>
       <LankingLayout>
-        <LankingBox>
-          1. 검색어
-        </LankingBox>
-        <LankingBox>
-          2. 검색어
-        </LankingBox>
-        <LankingBox>
-          3. 검색어
-        </LankingBox>
-        <LankingBox>
-          4. 검색어
-        </LankingBox>
-        <LankingBox>
-          5. 검색어
-        </LankingBox>
+        {lankingData.map((item) => (
+          <LankingBox
+            key={item.id}
+            onClick={() => handleClick(item.content)}
+          >
+            {item.id}. {item.content}
+          </LankingBox>
+        ))}
       </LankingLayout>
     </Layout>
-  )
-}
+  );
+};
 
 export default Lanking;
 
@@ -72,7 +87,7 @@ const LankingLayout = styled.div`
   align-self: stretch;
 `
 
-const LankingBox = styled.div`
+const LankingBox = styled(Link)`
   display: flex;
   padding: 10px 15px;
   align-items: flex-start;
