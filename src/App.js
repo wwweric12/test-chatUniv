@@ -6,6 +6,9 @@ import Header from "./assets/component/Header";
 import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Post from "./assets/pages/Board/Post";
+
+import Login from "./assets/pages/Login/Login";
+import Join from "./assets/pages/Join/Join";
 import Main from "./assets/pages/Main/Main";
 
 const App = () => {
@@ -23,7 +26,6 @@ const App = () => {
                   <Route path="/board" element={<Post />} />
                   <Route path="/" element={<Main />} />
                 </Routes>
-
                 <Footer />
               </Frame>
             </InLayout>
