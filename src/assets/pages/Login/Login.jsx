@@ -14,6 +14,8 @@ const Login = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(validation),
+    mode: "onSubmit",
+    reValidateMode: "onSubmit",
   });
   const onSubmit = (data) => {
     console.log(data);
@@ -37,6 +39,7 @@ const Login = () => {
               type="email"
               register={register}
               inputId="email"
+              errorCheck={errors.email}
             />
           </InputBlock>
           <InputBlock>
@@ -45,6 +48,7 @@ const Login = () => {
               type="password"
               register={register}
               inputId="password"
+              errorCheck={errors.password}
             />
           </InputBlock>
           <LoginError>{handleErrorMessage()}</LoginError>
