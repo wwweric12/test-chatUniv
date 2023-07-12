@@ -7,7 +7,7 @@ import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Test from "./assets/pages/Chat/Test";
 import Post from "./assets/pages/Board/Post";
-
+import Detail from "./assets/pages/Board/Detail";
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
                 <Header />
 
                 <Routes>
+                  <Route path="/board/:id" element={<Detail />} />
                   <Route path="/board" element={<Post />} />
                   <Route path="/" element={<Test />} />
                 </Routes>
