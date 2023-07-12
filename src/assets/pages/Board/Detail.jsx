@@ -1,21 +1,25 @@
 import styled from "styled-components";
 import user from "../../images/user.svg";
+import Comment from "../../component/Comment";
 
 const Detail = () => {
   return (
-    <DetailContainer>
-      <DetailUserBox>
-        <DetailUserImg src={user} alt="userImg"></DetailUserImg>
-        <DetailUserIdBox>
-          <DetailUserId>UserId</DetailUserId>
-          <DetailDate>02.02 21:09</DetailDate>
-        </DetailUserIdBox>
-      </DetailUserBox>
-      <DetailContentBox>
-        <DetailTitle>Title</DetailTitle>
-        <DetailContent>Content...</DetailContent>
-      </DetailContentBox>
-    </DetailContainer>
+    <>
+      <DetailContainer>
+        <DetailUserBox>
+          <DetailUserImg src={user} alt="userImg"></DetailUserImg>
+          <DetailUserIdBox>
+            <DetailUserId>UserId</DetailUserId>
+            <DetailDate>02.02 21:09</DetailDate>
+          </DetailUserIdBox>
+        </DetailUserBox>
+        <DetailContentBox>
+          <DetailTitle>Title</DetailTitle>
+          <DetailContent>Content...</DetailContent>
+        </DetailContentBox>
+      </DetailContainer>
+      <Comment />
+    </>
   );
 };
 
