@@ -7,6 +7,7 @@ import Footer from "./assets/component/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Post from "./assets/pages/Board/Post";
 import Main from "./assets/pages/Main/Main";
+import Lanking from "./assets/pages/Statistics/Lanking";
 
 const App = () => {
 
@@ -22,6 +23,7 @@ const App = () => {
                 <Routes>
                   <Route path="/board" element={<Post />} />
                   <Route path="/" element={<Main />} />
+                  <Route path="/lanking" element={<Lanking />} />
                 </Routes>
 
                 <Footer />
