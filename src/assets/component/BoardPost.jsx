@@ -1,16 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const BoardPost = ({ mypage, dataContents }) => {
   const { title, content, id, date } = dataContents;
+  const goDetail = useNavigate();
 
   return (
-    <PostArea>
+    <PostArea onClick={() => goDetail(id)}>
       <PostContainer>
         <PostTitleBox>
           <PostTitle>{title}</PostTitle>
           <PostContent>{content}</PostContent>
         </PostTitleBox>
-        <PostButton mypage={false}>삭제</PostButton>
+        <PostButton $mypage={false}>삭제</PostButton>
         {/* mypage면 삭제 버튼이 띄워져야 합니다. */}
       </PostContainer>
       <PostUserBox>
@@ -61,7 +63,7 @@ const PostButton = styled.button`
   color: ${({ theme }) => theme.colors.PURPLE100};
   border: 1px solid ${({ theme }) => theme.colors.PURPLE100};
   border-radius: 5px;
-  display: ${({ mypage }) => (mypage ? "block" : "none")};
+  display: ${({ $mypage }) => ($mypage ? "block" : "none")};
 `;
 
 const PostUserBox = styled.div`
