@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import userSrc from "../images/user.svg";
 
-
 const CommentList = () => {
   // 자신의 댓글인지 여부
   const [own, setOwn] = useState(false);
@@ -10,51 +9,35 @@ const CommentList = () => {
 
   return (
     <Layout>
-
       {/* map함수로 구현  */}
       {/* 임시로 내 댓글일때 아닐때 확인용으로 만듬 */}
 
       <Box>
-
         <img alt="user" src={userSrc} />
 
         <CommentBox>
-          <UserBox>
-            user
-          </UserBox>
-          <ContentBox>
-            content
-          </ContentBox>
+          <UserBox>user</UserBox>
+          <ContentBox>content</ContentBox>
         </CommentBox>
-
       </Box>
 
       {/* 내 댓글 */}
-      <Box background={own ? null : props => props.theme.colors.PURPLE10}>
-
+      <Box background={own ? null : (props) => props.theme.colors.PURPLE10}>
         <img alt="user" src={userSrc} />
 
         <CommentBox>
           <UserBox>
             user
-
             {!own && (
               <ButtonLayout>
-                <ButtonBox>
-                  수정
-                </ButtonBox>
-                <ButtonBox>
-                  삭제
-                </ButtonBox>
+                <ButtonBox>수정</ButtonBox>
+                <ButtonBox>삭제</ButtonBox>
               </ButtonLayout>
             )}
-
           </UserBox>
 
           {!own ? (
-            <ContentBox>
-              content
-            </ContentBox>
+            <ContentBox>content</ContentBox>
           ) : (
             <CommentInput
               value={editContent}
@@ -62,11 +45,10 @@ const CommentList = () => {
             />
           )}
         </CommentBox>
-
       </Box>
     </Layout>
   );
-}
+};
 
 export default CommentList;
 
@@ -76,7 +58,7 @@ const Layout = styled.div`
   align-items: flex-start;
   gap: 5px;
   align-self: stretch;
-`
+`;
 
 const Box = styled.div`
   display: flex;
@@ -94,11 +76,11 @@ const CommentBox = styled.div`
   align-items: flex-start;
   gap: 3px;
   flex: 1 0 0;
-`
+`;
 
 const UserBox = styled.div`
   display: flex;
-  align-items: ${(props) => props.alignItems || 'flex-start'};
+  align-items: ${(props) => props.alignItems || "flex-start"};
   gap: 10px;
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 14px;
@@ -108,7 +90,7 @@ const UserBox = styled.div`
 
   justify-content: space-between;
   align-self: stretch;
-`
+`;
 
 const ContentBox = styled.div`
   display: flex;
@@ -122,13 +104,13 @@ const ContentBox = styled.div`
   font-weight: 400;
   line-height: normal;
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
-`
+`;
 
 const ButtonLayout = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 5px;
-`
+`;
 
 const ButtonBox = styled.button`
   display: flex;
@@ -143,7 +125,7 @@ const ButtonBox = styled.button`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-`
+`;
 
 const CommentInput = styled.input`
   display: flex;
@@ -157,8 +139,8 @@ const CommentInput = styled.input`
   color: ${({ theme }) => theme.colors.BLACK};
   background: none;
 
-  &:focus{
+  &:focus {
     outline: none;
     border-bottom: 2px solid ${({ theme }) => theme.colors.PURPLE50};
   }
-`
+`;
