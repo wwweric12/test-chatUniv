@@ -13,6 +13,7 @@ import Main from "./assets/pages/Main/Main";
 import Lanking from "./assets/pages/Statistics/Lanking";
 import EditProfile from "./assets/pages/Mypage/EditProfile";
 import MypageHeader from "./assets/component/MypageHeader";
+import Mypage from "./assets/pages/Mypage/Mypage";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
                     <Route path="/board" element={<Post />} />
                     <Route path="/" element={<Main />} />
                     <Route path="/lanking" element={<Lanking />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/join" element={<Join />} />
+                    <Route path="/mypage" element={<Mypage />} />
                   </Route>
 
                   <Route
