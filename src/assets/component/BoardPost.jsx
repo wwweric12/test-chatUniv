@@ -1,10 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const BoardPost = ({ mypage, dataContents }) => {
   const { title, content, id, date } = dataContents;
+  const goDetail = useNavigate();
 
   return (
-    <PostArea>
+    <PostArea onClick={() => goDetail(id)}>
       <PostContainer>
         <PostTitleBox>
           <PostTitle>{title}</PostTitle>
