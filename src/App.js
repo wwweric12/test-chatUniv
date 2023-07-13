@@ -10,9 +10,9 @@ import Post from "./assets/pages/Board/Post";
 import Login from "./assets/pages/Login/Login";
 import Join from "./assets/pages/Join/Join";
 import Main from "./assets/pages/Main/Main";
+import Mypage from "./assets/pages/Mypage/Mypage";
 
 const App = () => {
-
   return (
     <>
       <ThemeProvider theme={Theme}>
@@ -25,6 +25,9 @@ const App = () => {
                 <Routes>
                   <Route path="/board" element={<Post />} />
                   <Route path="/" element={<Main />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/join" element={<Join />} />
+                  <Route path="/mypage" element={<Mypage />} />
                 </Routes>
                 <Footer />
               </Frame>
