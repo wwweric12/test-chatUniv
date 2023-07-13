@@ -10,6 +10,7 @@ import Detail from "./assets/pages/Board/Detail";
 import Login from "./assets/pages/Login/Login";
 import Join from "./assets/pages/Join/Join";
 import Main from "./assets/pages/Main/Main";
+import Lanking from "./assets/pages/Statistics/Lanking";
 import Mypage from "./assets/pages/Mypage/Mypage";
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
                   <Route path="/board/:id" element={<Detail />} />
                   <Route path="/board" element={<Post />} />
                   <Route path="/" element={<Main />} />
+                  <Route path="/lanking" element={<Lanking />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/join" element={<Join />} />
                   <Route path="/mypage" element={<Mypage />} />
