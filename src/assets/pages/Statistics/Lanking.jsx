@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const Lanking = () => {
@@ -10,18 +10,12 @@ const Lanking = () => {
     { id: 5, content: "검색어5" },
   ];
 
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleClick = (content) => {
-    const queryParams = new URLSearchParams(location.search);
-    queryParams.set("q", content);
-  
-    const searchParams = queryParams.toString();
-    const searchPath = `/?${searchParams}`;
-  
-    // 이동할 경로로 이동
-    window.location.href = searchPath;
+    navigate(`/?q=${content}`);
   };
+  
   
   
 
@@ -87,7 +81,7 @@ const LankingLayout = styled.div`
   align-self: stretch;
 `
 
-const LankingBox = styled(Link)`
+const LankingBox = styled.div`
   display: flex;
   padding: 10px 15px;
   align-items: flex-start;
