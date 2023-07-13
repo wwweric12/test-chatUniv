@@ -69,7 +69,6 @@ const TitleBox = styled.div`
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
 `
 
 const LankingLayout = styled.div`
@@ -93,7 +92,6 @@ const LankingBox = styled.div`
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: normal;
 
   &:hover {
     background: ${({ theme }) => theme.colors.PURPLE100};
