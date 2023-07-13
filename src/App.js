@@ -14,6 +14,7 @@ import Lanking from "./assets/pages/Statistics/Lanking";
 import EditProfile from "./assets/pages/Mypage/EditProfile";
 import MypageHeader from "./assets/component/MypageHeader";
 import Mypage from "./assets/pages/Mypage/Mypage";
+import CommentHistory from "./assets/pages/Mypage/CommentHistory";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
                   </Route>
 
                   <Route path="/mypage/editprofile" element={<EditProfile />} />
+                  <Route path="/mypage/comment" element={<CommentHistory />} />
                 </Routes>
                 <Footer />
               </Frame>
