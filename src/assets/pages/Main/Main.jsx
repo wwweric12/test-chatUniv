@@ -46,7 +46,7 @@ const Main = () => {
   ];
 
   return (
-    <Layout height={layoutHeight - 136}>
+    <Layout height={layoutHeight - 145}>
       <InLayout>
 
         <Search />
