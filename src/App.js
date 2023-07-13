@@ -35,15 +35,7 @@ const App = () => {
                     <Route path="/mypage" element={<Mypage />} />
                   </Route>
 
-                  <Route
-                    path="/mypage/editprofile"
-                    element={
-                      <>
-                        <MypageHeader title="내 정보 수정" />
-                        <EditProfile />
-                      </>
-                    }
-                  />
+                  <Route path="/mypage/editprofile" element={<EditProfile />} />
                 </Routes>
                 <Footer />
               </Frame>
@@ -65,6 +57,7 @@ const HeaderLayout = () => {
     </>
   );
 }
+
 
 const Layout = styled.div`
   display: flex;
