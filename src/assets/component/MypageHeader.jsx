@@ -1,11 +1,15 @@
 import styled from "styled-components";
 import goBackSrc from "../images/goBack.svg";
+import { Link } from "react-router-dom";
 
 const MypageHeader = ({ title }) => {
+
   return (
     <Box>
       <Layout>
-        <img alt="back" src={goBackSrc}/>
+        <Link to="/mypage">
+          <img alt="back" src={goBackSrc} />
+        </Link>
         <TitleBox>
           <Title>
             {title}
@@ -46,7 +50,4 @@ const Title = styled.div`
   gap: 10px;
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 `
