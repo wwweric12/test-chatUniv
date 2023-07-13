@@ -23,7 +23,10 @@ const Button = styled.button`
   font-weight: 600;
   line-height: 26px;
   padding: 10px;
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.PURPLE70};
+    color: ${({ theme }) => theme.colors.WHITE};
   }
 `;

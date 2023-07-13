@@ -12,7 +12,7 @@ const BoardPost = ({ mypage, dataContents }) => {
   };
 
   return (
-    <PostArea onClick={() => goDetail(id)}>
+    <PostArea>
       <PostContainer>
         <PostTitleBox onClick={() => goDetail(id)}>
           <PostTitle>{title}</PostTitle>
