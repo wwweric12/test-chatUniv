@@ -9,7 +9,6 @@ import Post from "./assets/pages/Board/Post";
 import Main from "./assets/pages/Main/Main";
 
 const App = () => {
-
   return (
     <>
       <ThemeProvider theme={Theme}>

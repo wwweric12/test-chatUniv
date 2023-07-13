@@ -5,14 +5,22 @@ const BoardPost = ({ mypage, dataContents }) => {
   const { title, content, id, date } = dataContents;
   const goDetail = useNavigate();
 
+  const handleDelete = () => {
+    console.log(
+      "delete"
+    ); /* 삭제 버튼 onClick 활성화를 위해 console.log 추가해놨습니다. */
+  };
+
   return (
-    <PostArea onClick={() => goDetail(id)}>
+    <PostArea>
       <PostContainer>
-        <PostTitleBox>
+        <PostTitleBox onClick={() => goDetail(id)}>
           <PostTitle>{title}</PostTitle>
           <PostContent>{content}</PostContent>
         </PostTitleBox>
-        <PostButton $mypage={false}>삭제</PostButton>
+        <PostButton $mypage={mypage} onClick={handleDelete}>
+          삭제
+        </PostButton>
         {/* mypage면 삭제 버튼이 띄워져야 합니다. */}
       </PostContainer>
       <PostUserBox>
