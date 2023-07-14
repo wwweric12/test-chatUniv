@@ -12,7 +12,6 @@ import Join from "./assets/pages/Join/Join";
 import Main from "./assets/pages/Main/Main";
 import Lanking from "./assets/pages/Statistics/Lanking";
 import EditProfile from "./assets/pages/Mypage/EditProfile";
-import MypageHeader from "./assets/component/MypageHeader";
 import Mypage from "./assets/pages/Mypage/Mypage";
 import CommentHistory from "./assets/pages/Mypage/CommentHistory";
 
