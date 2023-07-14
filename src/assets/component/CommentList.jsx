@@ -22,7 +22,7 @@ const CommentList = () => {
       </Box>
 
       {/* 내 댓글 */}
-      <Box>
+      <Box background={own ? null : (props) => props.theme.colors.PURPLE10}>
         <img alt="user" src={userSrc} />
 
         <CommentBox>
