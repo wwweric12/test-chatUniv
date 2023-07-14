@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import BoardPost from "../../component/BoardPost";
+import MypageHeader from "../../component/MypageHeader";
 
 const BoardList = () => {
   const dataContents = [
@@ -24,17 +25,20 @@ const BoardList = () => {
   ];
 
   return (
-    <MypageBoardBox>
-      {dataContents.map((item, idx) => (
-        <BoardPost
-          key={item.title}
-          /* myPage의 id는 동일하기에 key값은 오류로 인해 임의로 title로 넘겼습니다. */
-          id={idx}
-          dataContents={item}
-          mypage={true}
-        />
-      ))}
-    </MypageBoardBox>
+    <>
+      <MypageHeader title="게시물 내역" />
+      <MypageBoardBox>
+        {dataContents.map((item, idx) => (
+          <BoardPost
+            key={item.title}
+            /* myPage의 id는 동일하기에 key값은 오류로 인해 임의로 title로 넘겼습니다. */
+            id={idx}
+            dataContents={item}
+            mypage={true}
+          />
+        ))}
+      </MypageBoardBox>
+    </>
   );
 };
 

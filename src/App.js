@@ -4,7 +4,12 @@ import styled from "styled-components";
 import IntroductionSrc from "./assets/images/introduction.svg";
 import Header from "./assets/component/Header";
 import Footer from "./assets/component/Footer";
-import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Outlet,
+} from "react-router-dom";
 import Post from "./assets/pages/Board/Post";
 import Detail from "./assets/pages/Board/Detail";
 import Login from "./assets/pages/Login/Login";
@@ -13,6 +18,7 @@ import Main from "./assets/pages/Main/Main";
 import Lanking from "./assets/pages/Statistics/Lanking";
 import EditProfile from "./assets/pages/Mypage/EditProfile";
 import Mypage from "./assets/pages/Mypage/Mypage";
+import BoardList from "./assets/pages/Mypage/BoardList";
 
 const App = () => {
   return (
@@ -35,6 +41,7 @@ const App = () => {
                   </Route>
 
                   <Route path="/mypage/editprofile" element={<EditProfile />} />
+                  <Route path="/mypage/boardlist" element={<BoardList />} />
                 </Routes>
                 <Footer />
               </Frame>
@@ -55,8 +62,7 @@ const HeaderLayout = () => {
       {<Outlet />}
     </>
   );
-}
-
+};
 
 const Layout = styled.div`
   display: flex;
