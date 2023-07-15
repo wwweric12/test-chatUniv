@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Comment from "../../component/Comment";
 import out from "../../images/out.svg";
@@ -9,11 +10,17 @@ const Chatting = () => {
   const [inputText, setInputText] = useState("");
   const [chatList, setChatList] = useState([]);
   const scrollRef = useRef();
+  const navigate = useNavigate();
   // const data = ["안녕하세요", "반갑습니다"];
 
   useEffect(() => {
     scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [chatList]);
+
+  const handleOut = () => {
+    navigate("/");
+  };
+
   const handleSend = (e) => {
     e.preventDefault();
     if (inputText) {
@@ -31,7 +38,9 @@ const Chatting = () => {
         <ChatRoom>
           <ChatHeader>
             <ChatTitle>title</ChatTitle>
-            <img src={out} alt="out" />
+            <button onClick={handleOut}>
+              <img src={out} alt="out" />
+            </button>
           </ChatHeader>
           <ContentContainer onSubmit={handleSend}>
             {/* {data.map((item) => {
@@ -136,12 +145,12 @@ const MessageBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 5px;
+  align-self: flex-end;
 `;
 
 const MessageId = styled.div`
   margin-bottom: 3px;
   font-size: 14px;
-  align-self: flex-end;
 `;
 
 const MessageText = styled.div`
