@@ -1,28 +1,29 @@
+import { useState } from "react";
 import styled from "styled-components";
 import ChatList from "../../component/ChatList";
 import MypageHeader from "../../component/MypageHeader";
 
 const MyChatList = () => {
-  const data = [
-    { title: "title", page: "mypage" },
-    { title: "title1", page: "mypage" },
-    { title: "title2", page: "mypage" },
-    { title: "title3", page: "mypage" },
-    { title: "title4", page: "mypage" },
-    { title: "title4", page: "mypage" },
-  ];
+  const [myChat, setMyChat] = useState([
+    { title: "title", page: "mypage", id: 1 },
+    { title: "title1", page: "mypage", id: 2 },
+    { title: "title2", page: "mypage", id: 3 },
+    { title: "title3", page: "mypage", id: 4 },
+    { title: "title4", page: "mypage", id: 5 },
+    { title: "title4", page: "mypage", id: 6 },
+  ]);
   const onDelete = () => {};
   const onSend = () => {};
 
   return (
     <ChatListContainer>
       <MypageHeader title="채팅 내역" />
-      {data.map((item, index) => (
-        <ChatListBox key={index}>
+      {myChat.map((item, id) => (
+        <ChatListBox key={id}>
           <ChatList
             title={item.title}
             page={item.page}
-            handelChatDelete={onDelete}
+            handleChatDelete={onDelete}
             handleSend={onSend}
           />
         </ChatListBox>
