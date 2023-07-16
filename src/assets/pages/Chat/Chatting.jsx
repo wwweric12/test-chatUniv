@@ -131,6 +131,9 @@ const ContentBox = styled.div`
   flex: 1;
   margin-bottom: 10px;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const MessageContainer = styled.div`
