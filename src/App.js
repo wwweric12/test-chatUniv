@@ -21,6 +21,7 @@ import Mypage from "./assets/pages/Mypage/Mypage";
 import Chatting from "./assets/pages/Chat/Chatting";
 
 import CommentHistory from "./assets/pages/Mypage/CommentHistory";
+import MyChatList from "./assets/pages/Mypage/MyChatList";
 
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
                   </Route>
                   <Route path="/mypage/editprofile" element={<EditProfile />} />
                   <Route path="/mypage/comment" element={<CommentHistory />} />
+                  <Route path="/mypage/mychatlist" element={<MyChatList />} />
                 </Routes>
                 <Footer />
               </Frame>
