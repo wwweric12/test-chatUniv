@@ -4,13 +4,24 @@ import styled from "styled-components";
 import IntroductionSrc from "./assets/images/introduction.svg";
 import Header from "./assets/component/Header";
 import Footer from "./assets/component/Footer";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Outlet,
+} from "react-router-dom";
 import Post from "./assets/pages/Board/Post";
-
+import Detail from "./assets/pages/Board/Detail";
 import Login from "./assets/pages/Login/Login";
 import Join from "./assets/pages/Join/Join";
 import Main from "./assets/pages/Main/Main";
+import Lanking from "./assets/pages/Statistics/Lanking";
+import EditProfile from "./assets/pages/Mypage/EditProfile";
 import Mypage from "./assets/pages/Mypage/Mypage";
+import BoardList from "./assets/pages/Mypage/BoardList";
+import Chatting from "./assets/pages/Chat/Chatting";
+import CommentHistory from "./assets/pages/Mypage/CommentHistory";
+import MyChatList from "./assets/pages/Mypage/MyChatList";
 
 const App = () => {
   return (
@@ -21,13 +32,21 @@ const App = () => {
             <InLayout>
               <ImgBox alt="back_Introduction" src={IntroductionSrc} />
               <Frame>
-                <Header />
                 <Routes>
-                  <Route path="/board" element={<Post />} />
-                  <Route path="/" element={<Main />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/join" element={<Join />} />
-                  <Route path="/mypage" element={<Mypage />} />
+                  <Route element={<HeaderLayout />}>
+                    <Route path="/board/:id" element={<Detail />} />
+                    <Route path="/board" element={<Post />} />
+                    <Route path="/" element={<Main />} />
+                    <Route path="/lanking" element={<Lanking />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/join" element={<Join />} />
+                    <Route path="/mypage" element={<Mypage />} />
+                    <Route path="/chatting" element={<Chatting />} />
+                  </Route>
+                  <Route path="/mypage/editprofile" element={<EditProfile />} />
+                  <Route path="/mypage/boardlist" element={<BoardList />} />
+                  <Route path="/mypage/comment" element={<CommentHistory />} />
+                  <Route path="/mypage/mychatlist" element={<MyChatList />} />
                 </Routes>
                 <Footer />
               </Frame>
@@ -40,6 +59,15 @@ const App = () => {
 };
 
 export default App;
+
+const HeaderLayout = () => {
+  return (
+    <>
+      <Header />
+      {<Outlet />}
+    </>
+  );
+};
 
 const Layout = styled.div`
   display: flex;

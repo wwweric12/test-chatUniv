@@ -2,9 +2,11 @@ import styled from "styled-components";
 import SmallButton from "../../component/SmallButton";
 import Search from "../../component/Search";
 import { useState, useEffect } from "react";
+import CreateChat from "../../component/modal/CreateChat";
 
 const Main = () => {
   const [layoutHeight, setLayoutHeight] = useState(window.innerHeight);
+  const [showCreateChatModal, setShowCreateChatModal] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,8 +47,16 @@ const Main = () => {
     },
   ];
 
+  const openCreateChatModal = () => {
+    setShowCreateChatModal(true);
+  };
+
+  const closeCreateChatModal = () => {
+    setShowCreateChatModal(false);
+  };
+
   return (
-    <Layout height={layoutHeight - 136}>
+    <Layout height={layoutHeight - 145}>
       <InLayout>
 
         <Search />
@@ -71,8 +81,20 @@ const Main = () => {
         </ListBox>
       </InLayout>
       <BLayout>
-        <SmallButton text="채팅방 만들기" type="chatting" />
+        <SmallButton
+          text="채팅방 만들기"
+          type="chatting"
+          onClick={openCreateChatModal}
+        />
       </BLayout>
+      {showCreateChatModal && (
+        <>
+          <ModalOverlay onClick={closeCreateChatModal} />
+          <ModalLayout>
+            {showCreateChatModal && <CreateChat />}
+          </ModalLayout>
+        </>
+      )}
     </Layout>
   )
 }
@@ -107,7 +129,7 @@ const BLayout = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  z-index: 100;
+  z-index: 98;
 `
 
 const ListBox = styled.div`
@@ -180,4 +202,22 @@ const ContentBox = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+`
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+`
+
+const ModalLayout = styled.div`
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 `

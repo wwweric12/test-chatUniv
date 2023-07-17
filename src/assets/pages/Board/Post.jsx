@@ -90,10 +90,10 @@ const BoardBox = styled.div`
   flex-direction: column;
   align-items: center;
   width: 490px;
-  height: 758px;
+  height: 550px;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.GRAY};
-  margin-bottom: auto;
+  margin-bottom: 50px;
 `;
 
 const BoardName = styled.div`
