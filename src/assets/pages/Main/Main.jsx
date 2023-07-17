@@ -65,7 +65,7 @@ const Main = () => {
         <ListBox>
           {
             dataContents.map((item) => (
-              <ChatListBox className="class" key={item.id}>
+              <ChatListBox key={item.id}>
                 <ChatList
                   title={item.title}
                   content={item.content}
