@@ -21,9 +21,9 @@ const App = () => {
       <ThemeProvider theme={Theme}>
         <Router>
           <Layout>
-            <InLayout className="in123">
+            <InLayout>
               <ImgBox alt="back_Introduction" src={IntroductionSrc} />
-              <Frame className="frame123">
+              <Frame>
                 <Routes>
                   <Route element={<HeaderLayout />}>
                     <Route path="/board/:id" element={<Detail />} />
