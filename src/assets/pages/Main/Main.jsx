@@ -3,6 +3,7 @@ import SmallButton from "../../component/SmallButton";
 import Search from "../../component/Search";
 import { useState, useEffect } from "react";
 import CreateChat from "../../component/modal/CreateChat";
+import ChatList from "../../component/ChatList";
 
 const Main = () => {
   const [layoutHeight, setLayoutHeight] = useState(window.innerHeight);
@@ -64,18 +65,12 @@ const Main = () => {
         <ListBox>
           {
             dataContents.map((item) => (
-              <ChatBox key={item.id}>
-                <TopBox>
-                  <TitleBox>
-                    {item.title}
-                  </TitleBox>
-                </TopBox>
-                <BtmBox>
-                  <ContentBox>
-                    {item.content}
-                  </ContentBox>
-                </BtmBox>
-              </ChatBox>
+              <ChatListBox className="class" key={item.id}>
+                <ChatList
+                  title={item.title}
+                  content={item.content}
+                />
+              </ChatListBox>
             ))
           }
         </ListBox>
@@ -147,62 +142,8 @@ const ListBox = styled.div`
     width: 0;
     background: transparent;
   }
-`;
-
-
-const ChatBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  align-self: stretch;
-  border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.colors.GRAY};
-  background: ${({ theme }) => theme.colors.WHITE};
 `
 
-const TopBox = styled.div`
-  display: flex;
-  padding: 20px 20px 15px 10px;
-  align-items: flex-end;
-  gap: 10px;
-  align-self: stretch;
-  border-radius: 20px 20px 0px 0px;
-  background: ${({ theme }) => theme.colors.PURPLE100};
-`
-
-const BtmBox = styled.div`
-  display: flex;
-  padding: 15px 20px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  align-self: stretch;
-  border-radius: 0px 0px 20px 20px;
-  background: ${({ theme }) => theme.colors.PURPLE10};
-`
-
-const TitleBox = styled.div`
-  display: flex;
-  padding: 0px 10px;
-  align-items: flex-start;
-  gap: 10px;
-  color: ${({ theme }) => theme.colors.WHITE};
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`
-
-const ContentBox = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: ${({ theme }) => theme.colors.BLACK};
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -221,3 +162,7 @@ const ModalLayout = styled.div`
   transform: translate(-50%, -50%);
   z-index: 100;
 `
+
+const ChatListBox = styled.div`
+  width: 100%;
+`;
