@@ -19,6 +19,9 @@ import Lanking from "./assets/pages/Statistics/Lanking";
 import EditProfile from "./assets/pages/Mypage/EditProfile";
 import Mypage from "./assets/pages/Mypage/Mypage";
 import BoardList from "./assets/pages/Mypage/BoardList";
+import Chatting from "./assets/pages/Chat/Chatting";
+import CommentHistory from "./assets/pages/Mypage/CommentHistory";
+import MyChatList from "./assets/pages/Mypage/MyChatList";
 
 const App = () => {
   return (
@@ -38,10 +41,12 @@ const App = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/join" element={<Join />} />
                     <Route path="/mypage" element={<Mypage />} />
+                    <Route path="/chatting" element={<Chatting />} />
                   </Route>
-
                   <Route path="/mypage/editprofile" element={<EditProfile />} />
                   <Route path="/mypage/boardlist" element={<BoardList />} />
+                  <Route path="/mypage/comment" element={<CommentHistory />} />
+                  <Route path="/mypage/mychatlist" element={<MyChatList />} />
                 </Routes>
                 <Footer />
               </Frame>

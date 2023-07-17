@@ -6,9 +6,15 @@ import make_chatting from "../images/make_chatting.svg";
    <SmallButton text="채팅방 만들기" type="chatting" /> 이런식으로 사용하시면 됩니다.
 */
 
-const SmallButton = ({ text, type }) => {
+const SmallButton = ({ text, type, onClick }) => {
+  const handleClick = () => {
+    if (onClick) {
+      onClick(); // onClick prop 실행
+    }
+  };
+
   return (
-    <Button type={type}>
+    <Button type={type} onClick={handleClick}>
       <Image
         type={type}
         src={type === "board" ? make_board : make_chatting}

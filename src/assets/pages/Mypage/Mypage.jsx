@@ -7,6 +7,7 @@ const Mypage = () => {
     { path: "editprofile", title: "내정보 수정" },
     { path: "chat", title: "채팅내역 조회" },
     { path: "boardlist", title: "게시물내역 조회" },
+    { path: "mychatlist", title: "채팅내역 조회" },
     { path: "comment", title: "댓글내역 조회" },
   ]);
   return (
