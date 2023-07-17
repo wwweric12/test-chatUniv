@@ -61,7 +61,7 @@ const Login = () => {
           <SignupText>
             아직 회원이 아니신가요?
             <Link to="/join">
-              <SignupLink>회원가입하러 가기</SignupLink>
+              <SignupLink>회원가입하러가기</SignupLink>
             </Link>
           </SignupText>
         </SignupContainer>
@@ -116,5 +116,6 @@ const SignupText = styled.div`
 
 const SignupLink = styled.span`
   color: ${({ theme }) => theme.colors.PURPLE100};
+  text-decoration: underline;
   margin: 0 10px;
 `;
