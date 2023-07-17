@@ -18,8 +18,9 @@ import Main from "./assets/pages/Main/Main";
 import Lanking from "./assets/pages/Statistics/Lanking";
 import EditProfile from "./assets/pages/Mypage/EditProfile";
 import Mypage from "./assets/pages/Mypage/Mypage";
+import Chatting from "./assets/pages/Chat/Chatting";
 import CommentHistory from "./assets/pages/Mypage/CommentHistory";
-import Test from "./assets/pages/Chat/Test";
+import MyChatList from "./assets/pages/Mypage/MyChatList";
 
 const App = () => {
   return (
@@ -39,11 +40,11 @@ const App = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/join" element={<Join />} />
                     <Route path="/mypage" element={<Mypage />} />
-                    <Route path="/test" element={<Test />} />
+                    <Route path="/chatting" element={<Chatting />} />
                   </Route>
-
                   <Route path="/mypage/editprofile" element={<EditProfile />} />
                   <Route path="/mypage/comment" element={<CommentHistory />} />
+                  <Route path="/mypage/mychatlist" element={<MyChatList />} />
                 </Routes>
                 <Footer />
               </Frame>
