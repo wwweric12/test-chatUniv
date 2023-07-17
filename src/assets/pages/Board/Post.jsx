@@ -87,6 +87,7 @@ const BoardArea = styled.div`
 const BoardBox = styled.div`
   display: flex;
   overflow: scroll;
+  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
   width: 490px;
