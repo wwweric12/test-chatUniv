@@ -89,11 +89,26 @@ const InLayout = styled.div`
   flex-shrink: 0;
   align-self: stretch;
   height: 100vh;
+  margin: 0 auto;
+
+  @media (max-width: 960px) {
+    justify-content: center;
+    width: 550px;
+  }
+
+  @media (max-width: 560px) {
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 const ImgBox = styled.img`
   width: 50%;
   height: 100vh;
+
+  @media (max-width: 960px) {
+    display: none; 
+  }
 `;
 
 const Frame = styled.div`
