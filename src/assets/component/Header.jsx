@@ -63,7 +63,7 @@ const UserBox = styled.div`
   color: ${({ theme }) => theme.colors.PURPLE100};
   font-size: 16px;
 
-    @media (max-width: 560px) {
+  @media (max-width: 560px) {
     font-size: 12px;
   }
 `
