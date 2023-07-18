@@ -4,12 +4,12 @@ import Send from "../images/send.svg";
 const ChatList = ({ title, content, page, handleChatDelete, handleSend }) => {
   return (
     <ChatListContainer>
-      <ChatListTitle>
-        {title}
+      <ChatListTitleBox>
+        <ChatListTitle>{title}</ChatListTitle>
         {page === "mypage" && (
           <ChatDeleteBtn onClick={handleChatDelete}>삭제</ChatDeleteBtn>
         )}
-      </ChatListTitle>
+      </ChatListTitleBox>
       <ChatListContent page={page}>
         {page === "mypage" ? (
           <ChatInputBox>
@@ -30,13 +30,20 @@ export default ChatList;
 const ChatListContainer = styled.div`
   width: 100%;
 `;
-const ChatListTitle = styled.div`
-  width: 100%;
-  height: 61px;
-  position: relative;
+
+const ChatListTitleBox = styled.div`
+  display: flex;
+  height: 68px;
+  padding: 10px 20px 10px 10px;
+  align-items: flex-end;
+  align-self: stretch;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.colors.PURPLE100};
   border-radius: 20px 20px 0 0;
-  padding: 20px;
+`;
+const ChatListTitle = styled.div`
+  padding: 0 10px;
+  align-items: flex-start;
   color: ${({ theme }) => theme.colors.WHITE};
   font-weight: 400;
   font-size: 20px;
@@ -50,10 +57,11 @@ const ChatListContent = styled.div`
 `;
 
 const ChatDeleteBtn = styled.button`
-  position: absolute;
-  right: 20px;
+  display: flex;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.WHITE};
   color: ${({ theme }) => theme.colors.PURPLE100};
+  border: 1px solid ${({ theme }) => theme.colors.PURPLE100};
   font-weight: 400;
   padding: 3px;
   border-radius: 5px;
