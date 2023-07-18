@@ -1,7 +1,20 @@
 import styled from "styled-components";
 import BoardPost from "../../component/BoardPost";
 import SmallButton from "../../component/SmallButton";
+import WritePost from "../../component/modal/WritePost";
+import { useState } from "react";
+
 const Post = () => {
+  const [showWriteModal, setShowWriteModal] = useState(false);
+
+  const openWriteModal = () => {
+    setShowWriteModal(true);
+  };
+
+  const closeWriteModal = () => {
+    setShowWriteModal(false);
+  };
+
   const dataContents = [
     {
       id: "0",
@@ -69,7 +82,12 @@ const Post = () => {
           ))}
         </BoardDetail>
       </BoardBox>
-      <SmallButton type="board" text="게시글 작성하기" />
+      {showWriteModal && <WritePost closeBtn={closeWriteModal} />}
+      <SmallButton
+        type="board"
+        text="게시글 작성하기"
+        onClick={openWriteModal}
+      />
     </BoardArea>
   );
 };
@@ -80,20 +98,25 @@ const BoardArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 510px;
-  height: 935px;
+  width: 100%;
+  height: 100%;
 `;
 
 const BoardBox = styled.div`
   display: flex;
-  overflow: scroll;
+  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
-  width: 490px;
+  width: 100%;
   height: 550px;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.GRAY};
   margin-bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const BoardName = styled.div`
