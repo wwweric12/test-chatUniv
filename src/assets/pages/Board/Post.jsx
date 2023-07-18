@@ -80,21 +80,30 @@ const BoardArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 510px;
-  height: 935px;
+  width: 100%;
+  height: 100%;
 `;
 
 const BoardBox = styled.div`
   display: flex;
-  overflow: scroll;
   overflow-x: hidden;
   flex-direction: column;
   align-items: center;
-  width: 490px;
+  width: 100%;
   height: 550px;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.GRAY};
   margin-bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 37px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.GRAY}; /* 스크롤바 막대 색상 */
+    border-radius: 10px;
+  }
 `;
 
 const BoardName = styled.div`
