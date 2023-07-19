@@ -16,19 +16,21 @@ const MyChatList = () => {
   const onSend = () => {};
 
   return (
-    <ChatListContainer>
+    <>
       <MypageHeader title="채팅 내역" />
-      {myChat.map((item, id) => (
-        <ChatListBox key={id}>
-          <ChatList
-            title={item.title}
-            isMypage={item.myPage}
-            handleChatDelete={onDelete}
-            handleSend={onSend}
-          />
-        </ChatListBox>
-      ))}
-    </ChatListContainer>
+      <ChatListContainer>
+        {myChat.map((item, id) => (
+          <ChatListBox key={id}>
+            <ChatList
+              title={item.title}
+              isMypage={item.myPage}
+              handleChatDelete={onDelete}
+              handleSend={onSend}
+            />
+          </ChatListBox>
+        ))}
+      </ChatListContainer>
+    </>
   );
 };
 export default MyChatList;
