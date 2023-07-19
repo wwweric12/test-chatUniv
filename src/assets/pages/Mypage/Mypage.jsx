@@ -14,7 +14,7 @@ const Mypage = () => {
       <MypageBox>
         {myPageData.map((data, index) => (
           <Link to={`/mypage/${data.path}`} key={index}>
-            <MypageList isLast={index === myPageData.length - 1}>
+            <MypageList $isLast={index === myPageData.length - 1}>
               {data.title}
             </MypageList>
           </Link>
@@ -42,9 +42,12 @@ const MypageList = styled.div`
   font-weight: 600;
   font-size: 20px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
-  ${({ isLast }) =>
-    isLast &&
+  ${({ $isLast }) =>
+    $isLast &&
     `
     border: none;
   `}
+  @media (max-width: 529px) {
+    font-size: 14px;
+  }
 `;
