@@ -14,10 +14,10 @@ const Main = () => {
       setLayoutHeight(window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -59,20 +59,14 @@ const Main = () => {
   return (
     <Layout height={layoutHeight - 145}>
       <InLayout>
-
         <Search />
 
         <ListBox>
-          {
-            dataContents.map((item) => (
-              <ChatListBox key={item.id}>
-                <ChatList
-                  title={item.title}
-                  content={item.content}
-                />
-              </ChatListBox>
-            ))
-          }
+          {dataContents.map((item) => (
+            <ChatListBox key={item.id}>
+              <ChatList title={item.title} content={item.content} />
+            </ChatListBox>
+          ))}
         </ListBox>
       </InLayout>
       <BLayout>
@@ -85,14 +79,12 @@ const Main = () => {
       {showCreateChatModal && (
         <>
           <ModalOverlay onClick={closeCreateChatModal} />
-          <ModalLayout>
-            {showCreateChatModal && <CreateChat />}
-          </ModalLayout>
+          <ModalLayout>{showCreateChatModal && <CreateChat />}</ModalLayout>
         </>
       )}
     </Layout>
-  )
-}
+  );
+};
 
 export default Main;
 
@@ -104,7 +96,7 @@ const Layout = styled.div`
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  height: ${props => props.height}px;
+  height: ${(props) => props.height}px;
 `;
 
 const InLayout = styled.div`
@@ -115,7 +107,7 @@ const InLayout = styled.div`
   gap: 20px;
   align-self: stretch;
   height: 90%;
-`
+`;
 
 const BLayout = styled.div`
   height: 10%;
@@ -125,7 +117,7 @@ const BLayout = styled.div`
   align-items: center;
   gap: 15px;
   z-index: 98;
-`
+`;
 
 const ListBox = styled.div`
   display: flex;
@@ -142,7 +134,7 @@ const ListBox = styled.div`
     width: 0;
     background: transparent;
   }
-`
+`;
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -152,7 +144,7 @@ const ModalOverlay = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 99;
-`
+`;
 
 const ModalLayout = styled.div`
   display: flex;
@@ -161,7 +153,7 @@ const ModalLayout = styled.div`
   left: 67%;
   transform: translate(-50%, -50%);
   z-index: 100;
-`
+`;
 
 const ChatListBox = styled.div`
   width: 100%;
