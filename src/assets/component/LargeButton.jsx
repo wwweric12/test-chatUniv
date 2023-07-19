@@ -29,4 +29,8 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.PURPLE70};
     color: ${({ theme }) => theme.colors.WHITE};
   }
+
+  @media (max-width: 529px) {
+    width: 250px;
+  }
 `;

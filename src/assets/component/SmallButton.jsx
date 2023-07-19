@@ -42,6 +42,11 @@ const Button = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 529px) {
+    width: ${(props) => (props.type === "board" ? 130 : 124)}px;
+    font-size: 12px;
+  }
 `;
 
 const Image = styled.img`
