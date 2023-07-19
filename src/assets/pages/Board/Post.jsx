@@ -73,26 +73,59 @@ const Post = () => {
   ];
 
   return (
-    <BoardArea>
-      <BoardName>게시판</BoardName>
-      <BoardBox>
-        <BoardDetail>
-          {dataContents.map((item, idx) => (
-            <BoardPost key={item.id} id={idx} dataContents={item} />
-          ))}
-        </BoardDetail>
-      </BoardBox>
-      {showWriteModal && <WritePost closeBtn={closeWriteModal} />}
-      <SmallButton
-        type="board"
-        text="게시글 작성하기"
-        onClick={openWriteModal}
-      />
-    </BoardArea>
+    <>
+      <BoardArea>
+        <BoardName>게시판</BoardName>
+        <BoardBox>
+          <BoardDetail>
+            {dataContents.map((item, idx) => (
+              <BoardPost key={item.id} id={idx} dataContents={item} />
+            ))}
+          </BoardDetail>
+          {showWriteModal && (
+            <>
+              <BackGround />
+              <ModalBox>
+                {showWriteModal && <WritePost closeBtn={closeWriteModal} />}
+              </ModalBox>
+            </>
+          )}
+        </BoardBox>
+      </BoardArea>
+      <ButtonArea>
+        <SmallButton
+          type="board"
+          text="게시글 작성하기"
+          onClick={openWriteModal}
+        />
+      </ButtonArea>
+    </>
   );
 };
 
 export default Post;
+
+const BackGround = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+`;
+
+const ModalBox = styled.div`
+  display: flex;
+  position: absolute;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+`;
+
+const ButtonArea = styled.div`
+  height: 10%;
+`;
 
 const BoardArea = styled.div`
   display: flex;
@@ -108,10 +141,9 @@ const BoardBox = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 550px;
+  height: 80%;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.GRAY};
-  margin-bottom: 50px;
   overflow-y: scroll;
   overflow-x: scroll;
   &::-webkit-scrollbar {
