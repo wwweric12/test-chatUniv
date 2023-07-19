@@ -53,7 +53,7 @@ const Layout = styled.div`
 
 const TitleLayout = styled.div`
   display: flex;
-  width: 300px;
+  width: 100%;
   padding: 10px;
   flex-direction: column;
   align-items: flex-start;
