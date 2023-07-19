@@ -58,7 +58,7 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid ${({ theme }) => theme.colors.GRAY};
-  padding: 15px 30px;
+  padding: 15px 30px 25px 30px;
 `;
 
 const ImgContainer = styled.div`
