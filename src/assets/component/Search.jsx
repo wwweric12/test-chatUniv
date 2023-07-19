@@ -110,7 +110,7 @@ const WordBox = styled.div`
   color: ${({ theme }) => theme.colors.WHITE};
   font-size: 16px;
   font-weight: 400;
-  @media (max-width: 560px) {
+  @media (max-width: 529px) {
     font-size: 14px;
   }
 `;
