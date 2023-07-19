@@ -34,7 +34,6 @@ const Container = styled.div`
   height: 370px;
   border-radius: 20px;
   padding: 0px 0px 10px 0px;
-  border: 1px solid ${({ theme }) => theme.colors.PURPLE70}; // border가 없으면 구분이 안가서 임의로 색상을 넣었습니다.
   background-color: ${({ theme }) => theme.colors.WHITE};
 `;
 
