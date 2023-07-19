@@ -47,4 +47,7 @@ const MypageList = styled.div`
     `
     border: none;
   `}
+  @media (max-width: 529px) {
+    font-size: 14px;
+  }
 `;
