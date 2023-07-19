@@ -23,6 +23,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   border-radius: 20px;
+
+  @media (max-width: 529px) {
+    width: 250px;
+  }
 `;
 
 const DeleteBox = styled.div`
@@ -35,6 +39,10 @@ const DeleteBox = styled.div`
   font-size: 16px;
   color: ${({ theme }) => theme.colors.PURPLE100};
   background-color: ${({ theme }) => theme.colors.WHITE};
+
+  @media (max-width: 529px) {
+    width: 220px;
+  }
 `;
 
 const ButtonContainer = styled.div`
