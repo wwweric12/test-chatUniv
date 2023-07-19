@@ -1,17 +1,23 @@
 import styled from "styled-components";
 import Send from "../images/send.svg";
 
-const ChatList = ({ title, content, page, handleChatDelete, handleSend }) => {
+const ChatList = ({
+  title,
+  content,
+  isMypage,
+  handleChatDelete,
+  handleSend,
+}) => {
   return (
     <ChatListContainer>
       <ChatListTitleBox>
         <ChatListTitle>{title}</ChatListTitle>
-        {page === "mypage" && (
+        {isMypage && (
           <ChatDeleteBtn onClick={handleChatDelete}>삭제</ChatDeleteBtn>
         )}
       </ChatListTitleBox>
-      <ChatListContent page={page}>
-        {page === "mypage" ? (
+      <ChatListContent $isMypage={isMypage}>
+        {isMypage ? (
           <ChatInputBox>
             <ChatInput />
             <button onClick={handleSend}>
@@ -53,7 +59,7 @@ const ChatListContent = styled.div`
   background-color: ${({ theme }) => theme.colors.PURPLE10};
   border-radius: 0 0 20px 20px;
   font-size: 16px;
-  padding: ${(props) => (props.page === "mypage" ? "10px" : "15px 20px")};
+  padding: ${(props) => (props.$isMypage ? "10px" : "15px 20px")};
 `;
 
 const ChatDeleteBtn = styled.button`
