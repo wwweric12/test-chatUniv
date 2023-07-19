@@ -50,4 +50,8 @@ const Title = styled.div`
   gap: 10px;
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 20px;
+
+  @media(max-width: 529px){
+    font-size: 16px;
+  }
 `
