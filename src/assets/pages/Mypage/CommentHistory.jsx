@@ -50,6 +50,14 @@ const Layout = styled.div`
   gap: 10px;
   flex: 1 0 0;
   align-self: stretch;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 `
 
 
