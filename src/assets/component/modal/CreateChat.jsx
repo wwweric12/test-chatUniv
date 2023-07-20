@@ -21,6 +21,10 @@ const Container = styled.div`
   height: 182px;
   background-color: ${({ theme }) => theme.colors.PURPLE100};
   border-radius: 20px;
+
+  @media (max-width: 529px) {
+    width: 250px;
+  }
 `;
 const InputBox = styled.input`
   width: 375px;
@@ -33,5 +37,12 @@ const InputBox = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.colors.PURPLE50};
     font-size: 16px;
+  }
+
+  @media (max-width: 529px) {
+    width: 220px;
+    &::placeholder {
+      text-align: center;
+    }
   }
 `;
