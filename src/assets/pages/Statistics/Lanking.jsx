@@ -53,7 +53,7 @@ const Layout = styled.div`
 
 const TitleLayout = styled.div`
   display: flex;
-  width: 300px;
+  width: 100%;
   padding: 10px;
   flex-direction: column;
   align-items: flex-start;
@@ -67,8 +67,11 @@ const TitleBox = styled.div`
   gap: 10px;
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
+
+  @media(max-width: 529px){
+    font-size: 16px;
+  }
 `
 
 const LankingLayout = styled.div`
@@ -96,5 +99,9 @@ const LankingBox = styled.div`
   &:hover {
     background: ${({ theme }) => theme.colors.PURPLE100};
     color: ${({ theme }) => theme.colors.WHITE};
+  }
+
+  @media(max-width: 529px){
+    font-size: 14px;
   }
 `

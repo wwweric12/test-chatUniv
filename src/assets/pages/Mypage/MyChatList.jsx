@@ -5,30 +5,32 @@ import MypageHeader from "../../component/MypageHeader";
 
 const MyChatList = () => {
   const [myChat, setMyChat] = useState([
-    { title: "title", page: "mypage", id: 1 },
-    { title: "title1", page: "mypage", id: 2 },
-    { title: "title2", page: "mypage", id: 3 },
-    { title: "title3", page: "mypage", id: 4 },
-    { title: "title4", page: "mypage", id: 5 },
-    { title: "title4", page: "mypage", id: 6 },
+    { title: "title", myPage: true, id: 1 },
+    { title: "title1", myPage: true, id: 2 },
+    { title: "title2", myPage: true, id: 3 },
+    { title: "title3", myPage: true, id: 4 },
+    { title: "title4", myPage: true, id: 5 },
+    { title: "title4", myPage: true, id: 6 },
   ]);
   const onDelete = () => {};
   const onSend = () => {};
 
   return (
-    <ChatListContainer>
+    <>
       <MypageHeader title="채팅 내역" />
-      {myChat.map((item, id) => (
-        <ChatListBox key={id}>
-          <ChatList
-            title={item.title}
-            page={item.page}
-            handleChatDelete={onDelete}
-            handleSend={onSend}
-          />
-        </ChatListBox>
-      ))}
-    </ChatListContainer>
+      <ChatListContainer>
+        {myChat.map((item, id) => (
+          <ChatListBox key={id}>
+            <ChatList
+              title={item.title}
+              isMypage={item.myPage}
+              handleChatDelete={onDelete}
+              handleSend={onSend}
+            />
+          </ChatListBox>
+        ))}
+      </ChatListContainer>
+    </>
   );
 };
 export default MyChatList;

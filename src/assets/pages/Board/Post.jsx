@@ -1,7 +1,20 @@
 import styled from "styled-components";
 import BoardPost from "../../component/BoardPost";
 import SmallButton from "../../component/SmallButton";
+import WritePost from "../../component/modal/WritePost";
+import { useState } from "react";
+
 const Post = () => {
+  const [showWriteModal, setShowWriteModal] = useState(false);
+
+  const openWriteModal = () => {
+    setShowWriteModal(true);
+  };
+
+  const closeWriteModal = () => {
+    setShowWriteModal(false);
+  };
+
   const dataContents = [
     {
       id: "0",
@@ -60,40 +73,82 @@ const Post = () => {
   ];
 
   return (
-    <BoardArea>
-      <BoardName>게시판</BoardName>
-      <BoardBox>
-        <BoardDetail>
-          {dataContents.map((item, idx) => (
-            <BoardPost key={item.id} id={idx} dataContents={item} />
-          ))}
-        </BoardDetail>
-      </BoardBox>
-      <SmallButton type="board" text="게시글 작성하기" />
-    </BoardArea>
+    <>
+      <BoardArea>
+        <BoardName>게시판</BoardName>
+        <BoardBox>
+          <BoardDetail>
+            {dataContents.map((item, idx) => (
+              <BoardPost key={item.id} id={idx} dataContents={item} />
+            ))}
+          </BoardDetail>
+          {showWriteModal && (
+            <>
+              <BackGround />
+              <ModalBox>
+                {showWriteModal && <WritePost closeBtn={closeWriteModal} />}
+              </ModalBox>
+            </>
+          )}
+        </BoardBox>
+      </BoardArea>
+      <ButtonArea>
+        <SmallButton
+          type="board"
+          text="게시글 작성하기"
+          onClick={openWriteModal}
+        />
+      </ButtonArea>
+    </>
   );
 };
 
 export default Post;
 
+const BackGround = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+`;
+
+const ModalBox = styled.div`
+  display: flex;
+  position: absolute;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+`;
+
+const ButtonArea = styled.div`
+  height: 10%;
+`;
+
 const BoardArea = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 510px;
-  height: 935px;
+  width: 100%;
+  height: 100%;
 `;
 
 const BoardBox = styled.div`
   display: flex;
-  overflow: scroll;
+  overflow-x: hidden;
   flex-direction: column;
   align-items: center;
-  width: 490px;
-  height: 550px;
+  width: 100%;
+  height: 80%;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.GRAY};
-  margin-bottom: 50px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const BoardName = styled.div`

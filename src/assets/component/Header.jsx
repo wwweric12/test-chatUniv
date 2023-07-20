@@ -15,7 +15,7 @@ const Header = () => {
           로그인
           {/* 로그아웃 */}
           <Link to="/mypage">
-            <img alt="mypage" src={mypageSrc} />
+            <Mypage alt="mypage" src={mypageSrc} />
           </Link>
         </UserBox>
       </Layout>
@@ -49,6 +49,10 @@ const Logo = styled(Link)`
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 24px;
   font-weight: 600;
+
+  @media (max-width: 529px) {
+    font-size: 20px;
+  }
 `
 
 const UserBox = styled.div`
@@ -58,4 +62,17 @@ const UserBox = styled.div`
   gap: 20px;
   color: ${({ theme }) => theme.colors.PURPLE100};
   font-size: 16px;
+
+  @media (max-width: 529px) {
+    font-size: 12px;
+  }
+`
+
+const Mypage = styled.img`
+  width: 35px;
+  height: 35px;
+  @media (max-width: 529px) {
+    width: 25px;
+    height: 25px;
+    }
 `

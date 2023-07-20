@@ -109,9 +109,10 @@ const WordBox = styled.div`
   background: ${({ theme }) => theme.colors.PURPLE100};
   color: ${({ theme }) => theme.colors.WHITE};
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  @media (max-width: 529px) {
+    font-size: 14px;
+  }
 `;
 
 const ClearSearchBtn = styled.button`

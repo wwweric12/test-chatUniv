@@ -3,6 +3,7 @@ import SmallButton from "../../component/SmallButton";
 import Search from "../../component/Search";
 import { useState, useEffect } from "react";
 import CreateChat from "../../component/modal/CreateChat";
+import ChatList from "../../component/ChatList";
 
 const Main = () => {
   const [layoutHeight, setLayoutHeight] = useState(window.innerHeight);
@@ -13,10 +14,10 @@ const Main = () => {
       setLayoutHeight(window.innerHeight);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -56,28 +57,16 @@ const Main = () => {
   };
 
   return (
-    <Layout height={layoutHeight - 145}>
+    <Layout height={layoutHeight - 150}>
       <InLayout>
-
         <Search />
 
         <ListBox>
-          {
-            dataContents.map((item) => (
-              <ChatBox key={item.id}>
-                <TopBox>
-                  <TitleBox>
-                    {item.title}
-                  </TitleBox>
-                </TopBox>
-                <BtmBox>
-                  <ContentBox>
-                    {item.content}
-                  </ContentBox>
-                </BtmBox>
-              </ChatBox>
-            ))
-          }
+          {dataContents.map((item) => (
+            <ChatListBox key={item.id}>
+              <ChatList title={item.title} content={item.content} />
+            </ChatListBox>
+          ))}
         </ListBox>
       </InLayout>
       <BLayout>
@@ -90,14 +79,12 @@ const Main = () => {
       {showCreateChatModal && (
         <>
           <ModalOverlay onClick={closeCreateChatModal} />
-          <ModalLayout>
-            {showCreateChatModal && <CreateChat />}
-          </ModalLayout>
+          <ModalLayout>{showCreateChatModal && <CreateChat />}</ModalLayout>
         </>
       )}
     </Layout>
-  )
-}
+  );
+};
 
 export default Main;
 
@@ -109,7 +96,7 @@ const Layout = styled.div`
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  height: ${props => props.height}px;
+  height: ${(props) => props.height}px;
 `;
 
 const InLayout = styled.div`
@@ -120,7 +107,7 @@ const InLayout = styled.div`
   gap: 20px;
   align-self: stretch;
   height: 90%;
-`
+`;
 
 const BLayout = styled.div`
   height: 10%;
@@ -130,7 +117,7 @@ const BLayout = styled.div`
   align-items: center;
   gap: 15px;
   z-index: 98;
-`
+`;
 
 const ListBox = styled.div`
   display: flex;
@@ -149,60 +136,6 @@ const ListBox = styled.div`
   }
 `;
 
-
-const ChatBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  align-self: stretch;
-  border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.colors.GRAY};
-  background: ${({ theme }) => theme.colors.WHITE};
-`
-
-const TopBox = styled.div`
-  display: flex;
-  padding: 20px 20px 15px 10px;
-  align-items: flex-end;
-  gap: 10px;
-  align-self: stretch;
-  border-radius: 20px 20px 0px 0px;
-  background: ${({ theme }) => theme.colors.PURPLE100};
-`
-
-const BtmBox = styled.div`
-  display: flex;
-  padding: 15px 20px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  align-self: stretch;
-  border-radius: 0px 0px 20px 20px;
-  background: ${({ theme }) => theme.colors.PURPLE10};
-`
-
-const TitleBox = styled.div`
-  display: flex;
-  padding: 0px 10px;
-  align-items: flex-start;
-  gap: 10px;
-  color: ${({ theme }) => theme.colors.WHITE};
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`
-
-const ContentBox = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: ${({ theme }) => theme.colors.BLACK};
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-`
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -211,7 +144,7 @@ const ModalOverlay = styled.div`
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 99;
-`
+`;
 
 const ModalLayout = styled.div`
   display: flex;
@@ -220,4 +153,8 @@ const ModalLayout = styled.div`
   left: 67%;
   transform: translate(-50%, -50%);
   z-index: 100;
-`
+`;
+
+const ChatListBox = styled.div`
+  width: 100%;
+`;
