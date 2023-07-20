@@ -8,7 +8,7 @@ const CommentForm = () => {
 
   return (
     <Layout>
-      <img alt="user" src={userSrc} />
+      <User alt="user" src={userSrc} />
       <CommentFormBox>
         <Commentinput
           type="text"
@@ -64,4 +64,14 @@ const SendBox = styled.button`
   align-items: flex-end;
   gap: 10px;
   align-self: stretch;
+`
+
+const User = styled.img`
+  width: 35px;
+  height: 35px;
+
+  @media(max-width: 529px){
+    width: 25px;
+    height: 25px;
+  }
 `

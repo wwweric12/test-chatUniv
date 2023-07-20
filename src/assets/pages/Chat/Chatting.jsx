@@ -186,5 +186,4 @@ const ChatInput = styled.input`
 
 const CommentContainer = styled.div`
   width: 100%;
-  padding: 30px 10px 48px 10px;
 `;
