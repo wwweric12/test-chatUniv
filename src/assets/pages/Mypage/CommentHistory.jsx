@@ -19,7 +19,7 @@ const CommentHistory = () => {
         {
           dummyData.map((item) => (
             <Box>
-              <img alt="user" src={userSrc} />
+              <User alt="user" src={userSrc} />
 
               <CommentBox>
                 <UserBox>
@@ -78,6 +78,9 @@ const UserBox = styled.div`
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 14px;
   font-weight: 400;
+  @media(max-width: 529px){
+    font-size: 10px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -86,7 +89,13 @@ const ContentBox = styled.div`
   align-items: flex-start;
   gap: 10px;
   align-self: stretch;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
+  color: ${({ theme }) => theme.colors.BLACK};
+  font-size: 16px;
+
+  @media(max-width: 529px){
+    font-size: 12px;
+  }
 `;
 
 const DateBox = styled.div`
@@ -95,4 +104,17 @@ const DateBox = styled.div`
   gap: 10px;
   color: ${({ theme }) => theme.colors.GRAY};
   font-size: 12px;
+  @media(max-width: 529px){
+    font-size: 10px;
+  }
+`
+
+const User = styled.img`
+  width: 35px;
+  height: 35px;
+
+  @media(max-width: 529px){
+    width: 25px;
+    height: 25px;
+  }
 `
