@@ -50,7 +50,7 @@ const Logo = styled(Link)`
   font-size: 24px;
   font-weight: 600;
 
-  @media (max-width: 560px) {
+  @media (max-width: 529px) {
     font-size: 20px;
   }
 `
@@ -63,7 +63,7 @@ const UserBox = styled.div`
   color: ${({ theme }) => theme.colors.PURPLE100};
   font-size: 16px;
 
-    @media (max-width: 560px) {
+  @media (max-width: 529px) {
     font-size: 12px;
   }
 `
@@ -71,7 +71,7 @@ const UserBox = styled.div`
 const Mypage = styled.img`
   width: 35px;
   height: 35px;
-  @media (max-width: 560px) {
+  @media (max-width: 529px) {
     width: 25px;
     height: 25px;
     }

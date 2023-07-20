@@ -96,7 +96,7 @@ const InLayout = styled.div`
     width: 550px;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 529px) {
     justify-content: center;
     width: 100%;
   }
