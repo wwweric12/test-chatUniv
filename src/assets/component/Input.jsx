@@ -24,6 +24,9 @@ const InputContainer = styled.div`
       props.$isError
         ? props.theme.colors.PURPLE100
         : props.theme.colors.PURPLE70};
+  @media (max-width: 529px) {
+    padding: 8.5px 15px;
+  }
 `;
 
 const InputBox = styled.input`
@@ -33,5 +36,8 @@ const InputBox = styled.input`
   &::placeholder {
     color: ${({ theme }) => theme.colors.GRAY};
     font-weight: 600;
+  }
+  @media (max-width: 529px) {
+    font-size: 14px;
   }
 `;
