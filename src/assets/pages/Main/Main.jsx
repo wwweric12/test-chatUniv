@@ -153,6 +153,10 @@ const ModalLayout = styled.div`
   left: 67%;
   transform: translate(-50%, -50%);
   z-index: 100;
+
+  @media(max-width: 529px) {
+    left: 50%;
+  }
 `;
 
 const ChatListBox = styled.div`
