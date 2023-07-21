@@ -33,7 +33,7 @@ const BoardPost = ({ mypage, dataContents }) => {
 export default BoardPost;
 
 const PostArea = styled.div`
-  width: 480px;
+  width: 100%;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -44,25 +44,35 @@ const PostArea = styled.div`
 
 const PostContainer = styled.div`
   display: flex;
-  width: 480px;
+  width: 100%;
   height: 52px;
   margin-bottom: 10px;
 `;
 
 const PostTitleBox = styled.div`
-  width: 444px;
+  width: 100%;
   height: 52px;
 `;
 
 const PostTitle = styled.div`
   height: 26px;
   font-size: 20px;
+
+  @media (max-width: 529px) {
+    font-size: 14px;
+    height: 18px;
+  }
 `;
 
 const PostContent = styled.div`
   height: 21px;
   font-size: 16px;
   margin-top: 10px;
+
+  @media (max-width: 529px) {
+    font-size: 12px;
+    height: 16px;
+  }
 `;
 
 const PostButton = styled.button`
@@ -80,6 +90,11 @@ const PostUserBox = styled.div`
   align-self: flex-start;
   color: ${({ theme }) => theme.colors.GRAY};
   font-size: 14px;
+
+  @media (max-width: 529px) {
+    font-size: 10px;
+    height: 13px;
+  }
 `;
 
 const PostUserId = styled.div`
