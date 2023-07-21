@@ -133,6 +133,9 @@ const BoardArea = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
+  @media (max-width: 529px) {
+    width: 300px;
+  }
 `;
 
 const BoardBox = styled.div`
@@ -163,6 +166,7 @@ const BoardName = styled.div`
 `;
 
 const BoardDetail = styled.div`
-  width: 480px;
+  width: 100%;
   height: 100px;
+  padding: 10px;
 `;
