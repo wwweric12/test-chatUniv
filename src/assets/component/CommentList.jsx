@@ -13,7 +13,7 @@ const CommentList = () => {
       {/* 임시로 내 댓글일때 아닐때 확인용으로 만듬 */}
 
       <Box>
-        <img alt="user" src={userSrc} />
+        <User alt="user" src={userSrc} />
 
         <CommentBox>
           <UserBox>user</UserBox>
@@ -23,7 +23,7 @@ const CommentList = () => {
 
       {/* 내 댓글 */}
       <Box background={own ? null : (props) => props.theme.colors.PURPLE10}>
-        <img alt="user" src={userSrc} />
+        <User alt="user" src={userSrc} />
 
         <CommentBox>
           <UserBox>
@@ -74,22 +74,22 @@ const CommentBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 3px;
   flex: 1 0 0;
 `;
 
 const UserBox = styled.div`
   display: flex;
-  align-items: ${(props) => props.alignItems || "flex-start"};
+  align-items: ${(props) => props.alignItems || "center"};
   gap: 10px;
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
-
   justify-content: space-between;
   align-self: stretch;
+
+  @media(max-width: 529px){
+    font-size: 10px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -100,10 +100,12 @@ const ContentBox = styled.div`
   align-self: stretch;
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
+
+  @media(max-width: 529px){
+    font-size: 12px;
+  }
 `;
 
 const ButtonLayout = styled.div`
@@ -122,9 +124,11 @@ const ButtonBox = styled.button`
   background: ${({ theme }) => theme.colors.WHITE};
   color: ${({ theme }) => theme.colors.PURPLE100};
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
+
+  @media(max-width: 529px){
+    font-size: 10px;
+  }
 `;
 
 const CommentInput = styled.input`
@@ -144,3 +148,13 @@ const CommentInput = styled.input`
     border-bottom: 2px solid ${({ theme }) => theme.colors.PURPLE50};
   }
 `;
+
+const User = styled.img`
+  width: 35px;
+  height: 35px;
+
+  @media(max-width: 529px){
+    width: 25px;
+    height: 25px;
+  }
+`

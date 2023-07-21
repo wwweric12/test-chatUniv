@@ -41,12 +41,10 @@ const TxtComment = styled.div`
   padding: 10px 15px;
   align-items: flex-start;
   gap: 10px;
-  border-radius: 40px;
   color: ${({ theme }) => theme.colors.PURPLE100};
   text-align: center;
   font-size: 16px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: 8px;`
+  letter-spacing: 8px;
+  `
 
