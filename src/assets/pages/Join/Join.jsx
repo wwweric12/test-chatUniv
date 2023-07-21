@@ -77,6 +77,7 @@ const Join = () => {
             <SignError>{errors.checkPassword.message}</SignError>
           )}
         </InputBox>
+
         <ButtonBlock>
           <LargeButton text="회원가입" type="submit" />
         </ButtonBlock>
@@ -89,6 +90,11 @@ export default Join;
 const SignupText = styled.div`
   font-size: 24px;
   margin: 91.5px auto;
+  padding: 10px;
+  @media (max-width: 529px) {
+    margin: 5.25px auto;
+    font-size: 20px;
+  }
 `;
 const InputContainer = styled.form`
   width: 100%;
@@ -102,6 +108,9 @@ const InputBox = styled.div`
 const InputText = styled.div`
   padding: 10px 0;
   font-size: 16px;
+  @media (max-width: 529px) {
+    font-size: 14px;
+  }
 `;
 
 const AuthenticBox = styled.div`
@@ -119,11 +128,17 @@ const AuthenticButton = styled.button`
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.WHITE};
   background-color: ${({ theme }) => theme.colors.PURPLE100};
+  @media (max-width: 529px) {
+    font-size: 12px;
+  }
 `;
 
 const ButtonBlock = styled.div`
   padding: 20px 35px;
-  margin: 91.5px auto;
+  margin: 108.5px auto;
+  @media (max-width: 529px) {
+    margin: 5.25px auto;
+  }
 `;
 
 const SignError = styled.div`
