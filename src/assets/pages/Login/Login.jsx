@@ -99,10 +99,6 @@ const LoginError = styled.div`
   width: 100%;
   color: red;
   font-size: 12px;
-  margin: 10px 0;
-  @media (max-width: 529px) {
-    width: 250px;
-  }
 `;
 
 const SignupContainer = styled.div`
