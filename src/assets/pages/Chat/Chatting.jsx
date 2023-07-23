@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import Comment from "../../component/Comment";
 import out from "../../images/out.svg";
@@ -11,6 +11,8 @@ const Chatting = () => {
   const [chatList, setChatList] = useState([]);
   const scrollRef = useRef();
   const navigate = useNavigate();
+  const { id } = useParams();
+
   // const data = ["안녕하세요", "반갑습니다"];
 
   useEffect(() => {

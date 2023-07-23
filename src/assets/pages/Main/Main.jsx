@@ -64,7 +64,7 @@ const Main = () => {
 
         <ListBox>
           {dataContents.map((item) => (
-            <Link to="/chatting" key={item.id}>
+            <Link to={`/chatting/${item.id}`} key={item.id}>
               <ChatListBox>
                 <ChatList title={item.title} content={item.content} />
               </ChatListBox>
