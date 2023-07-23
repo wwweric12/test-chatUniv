@@ -115,12 +115,27 @@ const BackGround = styled.div`
   z-index: 99;
 `;
 
+// const ModalBox = styled.div`
+//   display: flex;
+//   position: absolute;
+//   left: 53%;
+//   transform: translate(-50%, -50%);
+//   z-index: 100;
+// `;
+
 const ModalBox = styled.div`
   display: flex;
   position: absolute;
-  left: 53%;
+  left: 52%;
+  top: 20%;
   transform: translate(-50%, -50%);
   z-index: 100;
+  @media (max-width: 529px) {
+    width: 90%; /* 원하는 크기로 조정하세요 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 const ButtonArea = styled.div`

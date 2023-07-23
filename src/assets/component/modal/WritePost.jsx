@@ -35,6 +35,10 @@ const Container = styled.div`
   border-radius: 20px;
   padding: 0px 0px 10px 0px;
   background-color: ${({ theme }) => theme.colors.WHITE};
+
+  @media (max-width: 529px) {
+    width: 280px;
+  }
 `;
 
 const Header = styled.div`
@@ -66,6 +70,11 @@ const ContentContainer = styled.div`
   align-items: center;
   height: 278px;
   background-color: ${({ theme }) => theme.colors.WHITE};
+
+  @media (max-width: 529px) {
+    width: 100%;
+    height: 231px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -73,6 +82,10 @@ const ContentBox = styled.div`
   flex-direction: column;
   width: 410px;
   height: 238px;
+
+  @media (max-width: 529px) {
+    width: 240px;
+  }
 `;
 
 const ContentHeader = styled.input`
@@ -89,6 +102,10 @@ const ContentHeader = styled.input`
     line-height: 41px;
     color: ${({ theme }) => theme.colors.PURPLE50};
   }
+
+  @media (max-width: 529px) {
+    width: 100%;
+  }
 `;
 
 const ContentDetail = styled.textarea`
@@ -103,6 +120,10 @@ const ContentDetail = styled.textarea`
   &::placeholder {
     color: ${({ theme }) => theme.colors.PURPLE50};
   }
+
+  @media (max-width: 529px) {
+    width: 100%;
+  }
 `;
 
 const Footer = styled.div`
@@ -112,6 +133,11 @@ const Footer = styled.div`
   width: 450px;
   height: 38px;
   border-radius: 0px 0px 20px 20px;
+
+  @media (max-width: 529px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;
 
 const Button = styled.button`
