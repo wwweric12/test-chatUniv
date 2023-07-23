@@ -107,7 +107,7 @@ const ImgBox = styled.img`
   height: 100vh;
 
   @media (max-width: 960px) {
-    display: none; 
+    display: none;
   }
 `;
 

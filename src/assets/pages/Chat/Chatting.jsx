@@ -38,9 +38,9 @@ const Chatting = () => {
         <ChatRoom>
           <ChatHeader>
             <ChatTitle>title</ChatTitle>
-            <button onClick={handleOut}>
-              <img src={out} alt="out" />
-            </button>
+            <OutButton onClick={handleOut}>
+              <OutImg src={out} alt="out" />
+            </OutButton>
           </ChatHeader>
           <ContentContainer onSubmit={handleSend}>
             {/* {data.map((item) => {
@@ -54,13 +54,18 @@ const Chatting = () => {
             <ContentBox ref={scrollRef}>
               {chatList.map((item) => {
                 return (
-                  <MessageContainer isGpt={false}>
-                    <MessageBox>
-                      <MessageId>userId</MessageId>
-                      <MessageText isGpt={false}>{item}</MessageText>
-                    </MessageBox>
-                    <img src={user} alt="user" />
-                  </MessageContainer>
+                  <>
+                    <MessageContainer isGpt={false}>
+                      <MessageBox>
+                        <MessageId>userId</MessageId>
+                        <MessageText isGpt={false}>{item}</MessageText>
+                      </MessageBox>
+                      <UserImg src={user} alt="user" />
+                    </MessageContainer>
+                    <OutMessageContianer>
+                      <OutMessage>userId님이 채팅방을 나가셨습니다.</OutMessage>
+                    </OutMessageContianer>
+                  </>
                 );
               })}
             </ContentBox>
@@ -95,19 +100,44 @@ const ChatRoom = styled.div`
 
 const ChatHeader = styled.div`
   width: 100%;
+  height: 70px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  padding: 35px 10px 10px 10px;
+  padding: 10px 20px 10px 10px;
   background-color: ${({ theme }) => theme.colors.PURPLE100};
+  @media (max-width: 529px) {
+    height: 53px;
+  }
 `;
 
 const ChatTitle = styled.div`
   font-size: 20px;
   padding: 0 10px;
   color: ${({ theme }) => theme.colors.WHITE};
+  @media (max-width: 529px) {
+    font-size: 14px;
+  }
+`;
+
+const OutButton = styled.button`
+  width: 25px;
+  height: 25px;
+  @media (max-width: 529px) {
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+const OutImg = styled.img`
+  width: 25px;
+  height: 25px;
+  @media (max-width: 529px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const ContentContainer = styled.form`
@@ -119,15 +149,14 @@ const ContentContainer = styled.form`
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: ${({ theme }) => theme.colors.PURPLE10};
-`;
-
-const InputContainer = styled.div`
-  width: 100%;
-  padding: 0 10px;
+  @media (max-width: 529px) {
+    height: 332px;
+  }
 `;
 
 const ContentBox = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   flex: 1;
   margin-bottom: 10px;
   overflow-y: scroll;
@@ -148,12 +177,24 @@ const MessageBox = styled.div`
   display: flex;
   flex-direction: column;
   margin-right: 5px;
-  align-self: flex-end;
+`;
+
+const UserImg = styled.img`
+  width: 35px;
+  height: 35px;
+  @media (max-width: 529px) {
+    width: 25px;
+    height: 25px;
+  }
 `;
 
 const MessageId = styled.div`
   margin-bottom: 3px;
   font-size: 14px;
+  align-self: flex-end;
+  @media (max-width: 529px) {
+    font-size: 12px;
+  }
 `;
 
 const MessageText = styled.div`
@@ -162,10 +203,35 @@ const MessageText = styled.div`
   font-size: 16px;
   padding: 5px;
   border-radius: 5px;
+  align-self: flex-end;
   color: ${(props) =>
     props.isGpt ? props.theme.colors.PURPLE100 : props.theme.colors.WHITE};
   background-color: ${(props) =>
     props.isGpt ? props.theme.colors.WHITE : props.theme.colors.PURPLE100};
+  @media (max-width: 529px) {
+    font-size: 14px;
+  }
+`;
+
+const OutMessageContianer = styled.div`
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+`;
+
+const OutMessage = styled.div`
+  font-size: 14px;
+  padding: 5px;
+  color: ${({ theme }) => theme.colors.GRAY};
+  @media (max-width: 529px) {
+    font-size: 12px;
+  }
+`;
+
+const InputContainer = styled.div`
+  width: 100%;
+  padding: 0 10px;
 `;
 
 const ChatInputBox = styled.div`
