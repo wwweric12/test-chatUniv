@@ -4,6 +4,7 @@ import Search from "../../component/Search";
 import { useState, useEffect } from "react";
 import CreateChat from "../../component/modal/CreateChat";
 import ChatList from "../../component/ChatList";
+import { Link } from "react-router-dom";
 
 const Main = () => {
   const [layoutHeight, setLayoutHeight] = useState(window.innerHeight);
@@ -63,9 +64,11 @@ const Main = () => {
 
         <ListBox>
           {dataContents.map((item) => (
-            <ChatListBox key={item.id}>
-              <ChatList title={item.title} content={item.content} />
-            </ChatListBox>
+            <Link to={`/chatting/${item.id}`} key={item.id}>
+              <ChatListBox>
+                <ChatList title={item.title} content={item.content} />
+              </ChatListBox>
+            </Link>
           ))}
         </ListBox>
       </InLayout>
@@ -123,7 +126,6 @@ const ListBox = styled.div`
   display: flex;
   padding: 10px 0px;
   flex-direction: column;
-  align-items: flex-start;
   gap: 15px;
   align-self: stretch;
   overflow-y: auto;
@@ -154,7 +156,7 @@ const ModalLayout = styled.div`
   transform: translate(-50%, -50%);
   z-index: 100;
 
-  @media(max-width: 529px) {
+  @media (max-width: 529px) {
     left: 50%;
   }
 `;
