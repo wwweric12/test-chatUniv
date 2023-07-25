@@ -17,6 +17,9 @@ const Search = () => {
     if (querySearchTerm) {
       setSearchTerm(querySearchTerm);
       setSearchSubmitted(true);
+    } else {
+      setSearchTerm(''); 
+      setSearchSubmitted(false);
     }
   }, [location.search]);
 
