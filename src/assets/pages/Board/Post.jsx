@@ -105,6 +105,18 @@ const Post = () => {
 
 export default Post;
 
+const BoardArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 529px) {
+    width: 300px;
+  }
+`;
+
 const BackGround = styled.div`
   position: fixed;
   top: 0;
@@ -115,42 +127,20 @@ const BackGround = styled.div`
   z-index: 99;
 `;
 
-// const ModalBox = styled.div`
-//   display: flex;
-//   position: absolute;
-//   left: 53%;
-//   transform: translate(-50%, -50%);
-//   z-index: 100;
-// `;
-
 const ModalBox = styled.div`
   display: flex;
   position: absolute;
-  left: 52%;
-  top: 20%;
+  left: 53%;
   transform: translate(-50%, -50%);
   z-index: 100;
+
   @media (max-width: 529px) {
-    width: 90%; /* 원하는 크기로 조정하세요 */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: 20%;
   }
 `;
 
 const ButtonArea = styled.div`
   height: 10%;
-`;
-
-const BoardArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  @media (max-width: 529px) {
-    width: 300px;
-  }
 `;
 
 const BoardBox = styled.div`
