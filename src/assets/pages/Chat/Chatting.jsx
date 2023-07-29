@@ -47,27 +47,27 @@ const Chatting = () => {
           <ContentContainer onSubmit={handleSend}>
             {/* {data.map((item) => {
               return (
-                <MessageContainer isGpt={true}>
-                  <MessageText isGpt={true}>{item}</MessageText>
+                <MessageContainer $isGpt={true}>
+                  <MessageText $isGpt={true}>{item}</MessageText>
                 </MessageContainer>
               );
             })} 이부분은 보여주기식입니다 나중에 통신할때는 밑에있는 곳에서 함께 작석해야합니다 */}
 
             <ContentBox ref={scrollRef}>
-              {chatList.map((item) => {
+              {chatList.map((item,index) => {
                 return (
-                  <>
-                    <MessageContainer isGpt={false}>
+                  <div key={index}>
+                    <MessageContainer  $isGpt={false}>
                       <MessageBox>
                         <MessageId>userId</MessageId>
-                        <MessageText isGpt={false}>{item}</MessageText>
+                        <MessageText $isGpt={false}>{item}</MessageText>
                       </MessageBox>
                       <UserImg src={user} alt="user" />
                     </MessageContainer>
                     <OutMessageContianer>
                       <OutMessage>userId님이 채팅방을 나가셨습니다.</OutMessage>
                     </OutMessageContianer>
-                  </>
+                  </div>
                 );
               })}
             </ContentBox>
@@ -170,7 +170,7 @@ const ContentBox = styled.div`
 const MessageContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: ${(props) => (props.isGpt ? "left" : "right")};
+  justify-content: ${(props) => (props.$isGpt ? "left" : "right")};
   align-items: center;
   padding: 10px;
 `;
@@ -207,9 +207,9 @@ const MessageText = styled.div`
   border-radius: 5px;
   align-self: flex-end;
   color: ${(props) =>
-    props.isGpt ? props.theme.colors.PURPLE100 : props.theme.colors.WHITE};
+    props.$isGpt ? props.theme.colors.PURPLE100 : props.theme.colors.WHITE};
   background-color: ${(props) =>
-    props.isGpt ? props.theme.colors.WHITE : props.theme.colors.PURPLE100};
+    props.$isGpt ? props.theme.colors.WHITE : props.theme.colors.PURPLE100};
   @media (max-width: 529px) {
     font-size: 14px;
   }
