@@ -17,8 +17,8 @@ const CommentHistory = () => {
       <MypageHeader title="댓글 내역" />
       <Layout>
         {
-          dummyData.map((item) => (
-            <Box>
+          dummyData.map((item, index) => (
+            <Box key={index}>
               <User alt="user" src={userSrc} />
 
               <CommentBox>
