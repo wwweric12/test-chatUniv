@@ -6,7 +6,6 @@ const CommentList = () => {
   // 자신의 댓글인지 여부
   const [own, setOwn] = useState(false);
   const [editContent, setEditContent] = useState("");
-
   return (
     <Layout>
       {/* map함수로 구현  */}
@@ -22,7 +21,7 @@ const CommentList = () => {
       </Box>
 
       {/* 내 댓글 */}
-      <Box background={own ? null : (props) => props.theme.colors.PURPLE10}>
+      <MyBox>
         <User alt="user" src={userSrc} />
 
         <CommentBox>
@@ -45,7 +44,7 @@ const CommentList = () => {
             />
           )}
         </CommentBox>
-      </Box>
+      </MyBox>
     </Layout>
   );
 };
@@ -67,8 +66,19 @@ const Box = styled.div`
   gap: 8px;
   align-self: stretch;
   border-radius: 10px;
-  background: ${(props) => props.background || props.theme.colors.WHITE};
+  background: ${({ theme }) => theme.colors.WHITE};
 `;
+
+const MyBox = styled.div`
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 10px;
+  background: ${({ theme }) => theme.colors.PURPLE10};
+`;
+
 
 const CommentBox = styled.div`
   display: flex;
