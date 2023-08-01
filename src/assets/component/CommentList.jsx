@@ -39,10 +39,7 @@ const CommentList = () => {
           {!own ? (
             <ContentBox>content</ContentBox>
           ) : (
-            <CommentInput
-              value={editContent}
-              onChange={(e) => setEditContent(e.target.value)}
-            />
+            <CommentInput value={editContent} onChange={(e) => setEditContent(e.target.value)} />
           )}
         </CommentBox>
       </Box>
@@ -87,7 +84,7 @@ const UserBox = styled.div`
   justify-content: space-between;
   align-self: stretch;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 10px;
   }
 `;
@@ -103,7 +100,7 @@ const ContentBox = styled.div`
   font-weight: 400;
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 12px;
   }
 `;
@@ -126,7 +123,7 @@ const ButtonBox = styled.button`
   font-size: 12px;
   font-weight: 400;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 10px;
   }
 `;
@@ -153,8 +150,8 @@ const User = styled.img`
   width: 35px;
   height: 35px;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     width: 25px;
     height: 25px;
   }
-`
+`;

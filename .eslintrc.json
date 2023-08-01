@@ -1,0 +1,38 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["import"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "babelOptions": {
+      "babelrc": false,
+      "configFile": false,
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "rules": {
+    "semi": "error",
+    "prefer-const": "warn",
+    "react/react-in-jsx-scope": "off",
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling"]],
+        "newlines-between": "always"
+      }
+    ]
+  }
+}

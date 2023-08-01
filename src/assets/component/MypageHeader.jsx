@@ -3,7 +3,6 @@ import goBackSrc from "../images/goBack.svg";
 import { Link } from "react-router-dom";
 
 const MypageHeader = ({ title }) => {
-
   return (
     <Box>
       <Layout>
@@ -11,20 +10,18 @@ const MypageHeader = ({ title }) => {
           <img alt="back" src={goBackSrc} />
         </Link>
         <TitleBox>
-          <Title>
-            {title}
-          </Title>
+          <Title>{title}</Title>
         </TitleBox>
       </Layout>
     </Box>
-  )
-}
+  );
+};
 
 export default MypageHeader;
 
 const Box = styled.div`
   width: 100%;
-`
+`;
 
 const Layout = styled.div`
   display: flex;
@@ -33,7 +30,7 @@ const Layout = styled.div`
   align-items: center;
   align-self: stretch;
   background-color: ${({ theme }) => theme.colors.WHITE};
-`
+`;
 
 const TitleBox = styled.div`
   display: flex;
@@ -41,7 +38,7 @@ const TitleBox = styled.div`
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
-`
+`;
 
 const Title = styled.div`
   display: flex;
@@ -51,7 +48,7 @@ const Title = styled.div`
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 20px;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 16px;
   }
-`
+`;
