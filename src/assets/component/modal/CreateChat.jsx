@@ -33,10 +33,12 @@ const InputBox = styled.input`
   border: none;
   font-size: 16px;
   padding: 10px;
-  color: ${({ theme }) => theme.colors.PURPLE50};
+  font-weight: 600;
+  color: ${({ theme }) => theme.colors.BLACK};
   &::placeholder {
     color: ${({ theme }) => theme.colors.PURPLE50};
     font-size: 16px;
+    font-weight: 400;
   }
 
   @media (max-width: 529px) {
