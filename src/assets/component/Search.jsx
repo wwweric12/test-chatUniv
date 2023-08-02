@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import searchSrc from "../images/search.svg";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import searchSrc from "../images/search.svg";
 import closeSrc from "../images/search_close.svg";
 
 const Search = () => {
