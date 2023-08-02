@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+
 import Comment from "../../component/Comment";
 import out from "../../images/out.svg";
 import Send from "../../images/send.svg";
@@ -54,10 +55,10 @@ const Chatting = () => {
             })} 이부분은 보여주기식입니다 나중에 통신할때는 밑에있는 곳에서 함께 작석해야합니다 */}
 
             <ContentBox ref={scrollRef}>
-              {chatList.map((item,index) => {
+              {chatList.map((item, index) => {
                 return (
                   <div key={index}>
-                    <MessageContainer  $isGpt={false}>
+                    <MessageContainer $isGpt={false}>
                       <MessageBox>
                         <MessageId>userId</MessageId>
                         <MessageText $isGpt={false}>{item}</MessageText>
@@ -90,13 +91,13 @@ const Chatting = () => {
 };
 export default Chatting;
 
-const PageContainer =styled.div`
-width:100%;
-overflow-y: scroll;
-&::-webkit-scrollbar {
+const PageContainer = styled.div`
+  width: 100%;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
     display: none;
   }
-`
+`;
 
 const ChatContainer = styled.div`
   width: 100%;
@@ -214,8 +215,7 @@ const MessageText = styled.div`
   padding: 5px;
   border-radius: 5px;
   align-self: flex-end;
-  color: ${(props) =>
-    props.$isGpt ? props.theme.colors.PURPLE100 : props.theme.colors.WHITE};
+  color: ${(props) => (props.$isGpt ? props.theme.colors.PURPLE100 : props.theme.colors.WHITE)};
   background-color: ${(props) =>
     props.$isGpt ? props.theme.colors.WHITE : props.theme.colors.PURPLE100};
   @media (max-width: 529px) {

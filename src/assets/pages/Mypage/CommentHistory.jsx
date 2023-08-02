@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import MypageHeader from "../../component/MypageHeader";
 import userSrc from "../../images/user.svg";
 
@@ -11,34 +12,28 @@ const CommentHistory = () => {
     { userId: "user5", comment: "comment5", date: "3일전" },
   ];
 
-
   return (
     <>
       <MypageHeader title="댓글 내역" />
       <Layout>
-        {
-          dummyData.map((item, index) => (
-            <Box key={index}>
-              <User alt="user" src={userSrc} />
+        {dummyData.map((item, index) => (
+          <Box key={index}>
+            <User alt="user" src={userSrc} />
 
-              <CommentBox>
-                <UserBox>
-                  {item.userId}
-                  <DateBox>
-                    {item.date}
-                  </DateBox>
-                </UserBox>
+            <CommentBox>
+              <UserBox>
+                {item.userId}
+                <DateBox>{item.date}</DateBox>
+              </UserBox>
 
-                <ContentBox>{item.comment}</ContentBox>
-              </CommentBox>
-            </Box>
-          ))
-        }
-
+              <ContentBox>{item.comment}</ContentBox>
+            </CommentBox>
+          </Box>
+        ))}
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default CommentHistory;
 
@@ -58,8 +53,7 @@ const Layout = styled.div`
     width: 0;
     background: transparent;
   }
-`
-
+`;
 
 const Box = styled.div`
   display: flex;
@@ -86,7 +80,7 @@ const UserBox = styled.div`
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 14px;
   font-weight: 400;
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 10px;
   }
 `;
@@ -101,7 +95,7 @@ const ContentBox = styled.div`
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 16px;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 12px;
   }
 `;
@@ -112,17 +106,17 @@ const DateBox = styled.div`
   gap: 10px;
   color: ${({ theme }) => theme.colors.GRAY};
   font-size: 12px;
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 10px;
   }
-`
+`;
 
 const User = styled.img`
   width: 35px;
   height: 35px;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     width: 25px;
     height: 25px;
   }
-`
+`;

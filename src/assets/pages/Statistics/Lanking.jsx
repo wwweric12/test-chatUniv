@@ -15,9 +15,6 @@ const Lanking = () => {
   const handleClick = (content) => {
     navigate(`/?q=${content}`);
   };
-  
-  
-  
 
   return (
     <Layout>
@@ -26,10 +23,7 @@ const Lanking = () => {
       </TitleLayout>
       <LankingLayout>
         {lankingData.map((item) => (
-          <LankingBox
-            key={item.id}
-            onClick={() => handleClick(item.content)}
-          >
+          <LankingBox key={item.id} onClick={() => handleClick(item.content)}>
             {item.id}. {item.content}
           </LankingBox>
         ))}
@@ -49,7 +43,7 @@ const Layout = styled.div`
   flex: 1 0 0;
   align-self: stretch;
   background: ${({ theme }) => theme.colors.PURPLE10};
-`
+`;
 
 const TitleLayout = styled.div`
   display: flex;
@@ -58,7 +52,7 @@ const TitleLayout = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-`
+`;
 
 const TitleBox = styled.div`
   display: flex;
@@ -69,10 +63,10 @@ const TitleBox = styled.div`
   font-size: 20px;
   font-weight: 600;
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 16px;
   }
-`
+`;
 
 const LankingLayout = styled.div`
   display: flex;
@@ -81,7 +75,7 @@ const LankingLayout = styled.div`
   align-items: flex-start;
   gap: 15px;
   align-self: stretch;
-`
+`;
 
 const LankingBox = styled.div`
   display: flex;
@@ -101,7 +95,7 @@ const LankingBox = styled.div`
     color: ${({ theme }) => theme.colors.WHITE};
   }
 
-  @media(max-width: 529px){
+  @media (max-width: 529px) {
     font-size: 14px;
   }
-`
+`;

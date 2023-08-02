@@ -1,6 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
+
 import Input from "../../component/Input";
 import LargeButton from "../../component/LargeButton";
 import { validation } from "./Validation";
@@ -25,17 +26,12 @@ const Join = () => {
   };
 
   return (
-    <>
+    <SignupContainer>
       <SignupText>회원가입</SignupText>
       <InputContainer onSubmit={handleSubmit(onSubmit)}>
         <InputBox>
           <InputText>이메일</InputText>
-          <Input
-            type="email"
-            register={register}
-            inputId="email"
-            errorCheck={errors.email}
-          />
+          <Input type="email" register={register} inputId="email" errorCheck={errors.email} />
           {errors.email && <SignError>{errors.email.message}</SignError>}
         </InputBox>
         <InputBox>
@@ -47,13 +43,9 @@ const Join = () => {
               inputId="checkEmail"
               errorCheck={errors.checkEmail}
             />
-            <AuthenticButton onClick={handleAuthentic}>
-              인증하기
-            </AuthenticButton>
+            <AuthenticButton onClick={handleAuthentic}>인증하기</AuthenticButton>
           </AuthenticBox>
-          {errors.checkEmail && (
-            <SignError>{errors.checkEmail.message}</SignError>
-          )}
+          {errors.checkEmail && <SignError>{errors.checkEmail.message}</SignError>}
         </InputBox>
         <InputBox>
           <InputText>비밀번호</InputText>
@@ -73,26 +65,34 @@ const Join = () => {
             inputId="checkPassword"
             errorCheck={errors.checkPassword}
           />
-          {errors.checkPassword && (
-            <SignError>{errors.checkPassword.message}</SignError>
-          )}
+          {errors.checkPassword && <SignError>{errors.checkPassword.message}</SignError>}
         </InputBox>
 
         <ButtonBlock>
           <LargeButton text="회원가입" type="submit" />
         </ButtonBlock>
       </InputContainer>
-    </>
+    </SignupContainer>
   );
 };
 export default Join;
+
+const SignupContainer = styled.div`
+  width: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 const SignupText = styled.div`
   font-size: 24px;
   margin: 91.5px auto;
   padding: 10px;
   @media (max-width: 529px) {
-    margin: 5.25px auto;
+    margin: auto;
     font-size: 20px;
   }
 `;
@@ -137,7 +137,7 @@ const ButtonBlock = styled.div`
   padding: 20px 35px;
   margin: 108.5px auto;
   @media (max-width: 529px) {
-    margin: 5.25px auto;
+    margin: auto;
   }
 `;
 
