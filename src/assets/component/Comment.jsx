@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 
@@ -6,15 +7,13 @@ const Comment = () => {
   return (
     <Layout>
       <TxtBox>
-        <TxtComment>
-          댓글
-        </TxtComment>
+        <TxtComment>댓글</TxtComment>
       </TxtBox>
       <CommentForm />
-      <CommentList/>
+      <CommentList />
     </Layout>
   );
-}
+};
 
 export default Comment;
 
@@ -25,7 +24,7 @@ const Layout = styled.div`
   align-items: flex-start;
   flex: 1 0 0;
   align-self: stretch;
-`
+`;
 
 const TxtBox = styled.div`
   display: flex;
@@ -34,7 +33,7 @@ const TxtBox = styled.div`
   gap: 10px;
   align-self: stretch;
   border-bottom: 1px solid ${({ theme }) => theme.colors.GRAY};
-`
+`;
 
 const TxtComment = styled.div`
   display: flex;
@@ -46,5 +45,4 @@ const TxtComment = styled.div`
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 8px;
-  `
-
+`;

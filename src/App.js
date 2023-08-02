@@ -1,15 +1,11 @@
-import { Theme } from "./styles/Theme";
 import { ThemeProvider } from "styled-components";
 import styled from "styled-components";
+import { BrowserRouter as Router, Route, Routes, Outlet } from "react-router-dom";
+
+import { Theme } from "./styles/Theme";
 import IntroductionSrc from "./assets/images/introduction.svg";
 import Header from "./assets/component/Header";
 import Footer from "./assets/component/Footer";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Outlet,
-} from "react-router-dom";
 import Post from "./assets/pages/Board/Post";
 import Detail from "./assets/pages/Board/Detail";
 import Login from "./assets/pages/Login/Login";
@@ -74,11 +70,7 @@ const Layout = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(191, 48, 226, 0.3) 0%,
-    rgba(191, 48, 226, 0) 100%
-  );
+  background: linear-gradient(180deg, rgba(191, 48, 226, 0.3) 0%, rgba(191, 48, 226, 0) 100%);
   height: 100vh;
 `;
 

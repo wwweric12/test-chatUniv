@@ -1,20 +1,13 @@
 import styled from "styled-components";
+
 import Send from "../images/send.svg";
 
-const ChatList = ({
-  title,
-  content,
-  isMypage,
-  handleChatDelete,
-  handleSend,
-}) => {
+const ChatList = ({ title, content, isMypage, handleChatDelete, handleSend }) => {
   return (
     <ChatListContainer>
       <ChatListTitleBox $isMypage={isMypage}>
         <ChatListTitle>{title}</ChatListTitle>
-        {isMypage && (
-          <ChatDeleteBtn onClick={handleChatDelete}>삭제</ChatDeleteBtn>
-        )}
+        {isMypage && <ChatDeleteBtn onClick={handleChatDelete}>삭제</ChatDeleteBtn>}
       </ChatListTitleBox>
       <ChatListContent $isMypage={isMypage}>
         {isMypage ? (
