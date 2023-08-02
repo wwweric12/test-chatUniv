@@ -17,8 +17,7 @@ const Button = styled.button`
   border: 2px solid ${({ theme }) => theme.colors.PURPLE70};
   background-color: ${(props) =>
     props.$ispurple ? props.theme.colors.PURPLE70 : props.theme.colors.WHITE};
-  color: ${(props) =>
-    props.$ispurple ? props.theme.colors.WHITE : props.theme.colors.PURPLE70};
+  color: ${(props) => (props.$ispurple ? props.theme.colors.WHITE : props.theme.colors.PURPLE70)};
   font-size: 20px;
   font-weight: 600;
   line-height: 26px;

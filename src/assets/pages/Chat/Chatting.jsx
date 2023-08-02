@@ -35,7 +35,7 @@ const Chatting = () => {
   };
 
   return (
-    <>
+    <PageContainer>
       <ChatContainer>
         <ChatRoom>
           <ChatHeader>
@@ -85,10 +85,18 @@ const Chatting = () => {
       <CommentContainer>
         <Comment />
       </CommentContainer>
-    </>
+    </PageContainer>
   );
 };
 export default Chatting;
+
+const PageContainer =styled.div`
+width:100%;
+overflow-y: scroll;
+&::-webkit-scrollbar {
+    display: none;
+  }
+`
 
 const ChatContainer = styled.div`
   width: 100%;

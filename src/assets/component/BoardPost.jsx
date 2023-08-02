@@ -6,9 +6,7 @@ const BoardPost = ({ mypage, dataContents }) => {
   const goDetail = useNavigate();
 
   const handleDelete = () => {
-    console.log(
-      "delete"
-    ); /* 삭제 버튼 onClick 활성화를 위해 console.log 추가해놨습니다. */
+    console.log("delete"); /* 삭제 버튼 onClick 활성화를 위해 console.log 추가해놨습니다. */
   };
 
   return (

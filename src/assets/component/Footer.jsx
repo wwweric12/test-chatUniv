@@ -1,13 +1,14 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import Board from "../images/board.svg";
 import FillBoard from "../images/fill_board.svg";
 import Home from "../images/home.svg";
 import FillHome from "../images/fill_home.svg";
 import Lanking from "../images/lanking.svg";
 import FillLanking from "../images/fill_lanking.svg";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const Footer = () => {
   const location = useLocation();

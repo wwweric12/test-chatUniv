@@ -1,24 +1,25 @@
-import styled from 'styled-components';
-import searchSrc from '../images/search.svg';
-import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import closeSrc from '../images/search_close.svg';
+import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import searchSrc from "../images/search.svg";
+import closeSrc from "../images/search_close.svg";
 
 const Search = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [searchSubmitted, setSearchSubmitted] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
-    const querySearchTerm = queryParams.get('q');
+    const querySearchTerm = queryParams.get("q");
 
     if (querySearchTerm) {
       setSearchTerm(querySearchTerm);
       setSearchSubmitted(true);
     } else {
-      setSearchTerm(''); 
+      setSearchTerm("");
       setSearchSubmitted(false);
     }
   }, [location.search]);
@@ -26,7 +27,7 @@ const Search = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const queryParams = new URLSearchParams();
-    queryParams.set('q', searchTerm);
+    queryParams.set("q", searchTerm);
 
     const searchPath = `${location.pathname}?${queryParams.toString()}`;
     navigate(searchPath);
@@ -34,7 +35,7 @@ const Search = () => {
   };
 
   const handleClearSearch = () => {
-    setSearchTerm('');
+    setSearchTerm("");
     setSearchSubmitted(false);
     const searchPath = location.pathname;
     navigate(searchPath);
@@ -46,23 +47,20 @@ const Search = () => {
         <WordLayout>
           <WordBox>
             <ClearSearchBtn onClick={handleClearSearch}>
-              <img alt='close' src={closeSrc} />
+              <img alt="close" src={closeSrc} />
             </ClearSearchBtn>
             <span>{searchTerm}</span>
           </WordBox>
           <SearchBtn type="submit">
-            <img alt='search' src={searchSrc} />
+            <img alt="search" src={searchSrc} />
           </SearchBtn>
         </WordLayout>
       )}
       {!searchSubmitted && (
         <>
-          <SearchInput
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <SearchInput value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
           <SearchBtn type="submit">
-            <img alt='search' src={searchSrc} />
+            <img alt="search" src={searchSrc} />
           </SearchBtn>
         </>
       )}
@@ -132,4 +130,4 @@ const WordLayout = styled.div`
   align-items: center;
   align-self: stretch;
   flex: 1 0 0;
-`
+`;
