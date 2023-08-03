@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import MypageHeader from "../../component/MypageHeader";
-import Input from "../../component/Input";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import MypageHeader from "../../component/MypageHeader";
+import Input from "../../component/Input";
 import { validation } from "../Mypage/Validation";
 import LargeButton from "../../component/LargeButton";
 
@@ -26,9 +27,7 @@ const EditProfile = () => {
       <FormBox onSubmit={handleSubmit(onSubmit)}>
         <Box>
           <InBox>
-            <TxtBox>
-              비밀번호
-            </TxtBox>
+            <TxtBox>비밀번호</TxtBox>
             <Input
               type="password"
               register={register}
@@ -38,18 +37,14 @@ const EditProfile = () => {
             {errors.password && <SignError>{errors.password.message}</SignError>}
           </InBox>
           <InBox>
-            <TxtBox>
-              비밀번호 확인
-            </TxtBox>
+            <TxtBox>비밀번호 확인</TxtBox>
             <Input
               type="password"
               register={register}
               inputId="checkPassword"
               errorCheck={errors.checkPassword}
             />
-            {errors.checkPassword && (
-              <SignError>{errors.checkPassword.message}</SignError>
-            )}
+            {errors.checkPassword && <SignError>{errors.checkPassword.message}</SignError>}
           </InBox>
         </Box>
 
@@ -58,11 +53,10 @@ const EditProfile = () => {
         </ButtonBox>
       </FormBox>
     </>
-  )
-}
+  );
+};
 
 export default EditProfile;
-
 
 const Box = styled.div`
   display: flex;
@@ -70,7 +64,7 @@ const Box = styled.div`
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
-`
+`;
 
 const InBox = styled.div`
   display: flex;
@@ -79,7 +73,7 @@ const InBox = styled.div`
   justify-content: center;
   align-items: flex-start;
   align-self: stretch;
-`
+`;
 
 const TxtBox = styled.div`
   display: flex;
@@ -89,7 +83,7 @@ const TxtBox = styled.div`
   color: ${({ theme }) => theme.colors.BLACK};
   font-size: 16px;
   font-weight: 400;
-`
+`;
 
 const SignError = styled.div`
   width: 100%;
@@ -114,4 +108,4 @@ const FormBox = styled.form`
   align-items: center;
   gap: 50px;
   align-self: stretch;
-`
+`;
