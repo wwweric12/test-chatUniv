@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import SmallButton from "../../component/SmallButton";
 import Search from "../../component/Search";
-import { useState, useEffect } from "react";
 import CreateChat from "../../component/modal/CreateChat";
 import ChatList from "../../component/ChatList";
-import { Link } from "react-router-dom";
 
 const Main = () => {
   const [layoutHeight, setLayoutHeight] = useState(window.innerHeight);
@@ -73,11 +74,7 @@ const Main = () => {
         </ListBox>
       </InLayout>
       <BLayout>
-        <SmallButton
-          text="채팅방 만들기"
-          type="chatting"
-          onClick={openCreateChatModal}
-        />
+        <SmallButton text="채팅방 만들기" type="chatting" onClick={openCreateChatModal} />
       </BLayout>
       {showCreateChatModal && (
         <>

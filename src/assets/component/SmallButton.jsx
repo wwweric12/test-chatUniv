@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import make_board from "../images/make_board.svg";
 import make_chatting from "../images/make_chatting.svg";
 
@@ -15,11 +16,7 @@ const SmallButton = ({ text, type, onClick }) => {
 
   return (
     <Button type={type} onClick={handleClick}>
-      <Image
-        type={type}
-        src={type === "board" ? make_board : make_chatting}
-        alt="smallBtn_img"
-      />
+      <Image type={type} src={type === "board" ? make_board : make_chatting} alt="smallBtn_img" />
       {text}
     </Button>
   );

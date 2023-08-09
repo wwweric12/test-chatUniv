@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+
 import ChatList from "../../component/ChatList";
 import MypageHeader from "../../component/MypageHeader";
 

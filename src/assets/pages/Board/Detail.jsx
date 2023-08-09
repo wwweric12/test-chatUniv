@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import user from "../../images/user.svg";
 import Comment from "../../component/Comment";
 
