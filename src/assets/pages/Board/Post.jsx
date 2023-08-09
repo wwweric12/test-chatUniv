@@ -85,19 +85,13 @@ const Post = () => {
           {showWriteModal && (
             <>
               <BackGround />
-              <ModalBox>
-                {showWriteModal && <WritePost closeBtn={closeWriteModal} />}
-              </ModalBox>
+              <ModalBox>{showWriteModal && <WritePost closeBtn={closeWriteModal} />}</ModalBox>
             </>
           )}
         </BoardBox>
       </BoardArea>
       <ButtonArea>
-        <SmallButton
-          type="board"
-          text="게시글 작성하기"
-          onClick={openWriteModal}
-        />
+        <SmallButton type="board" text="게시글 작성하기" onClick={openWriteModal} />
       </ButtonArea>
     </>
   );
