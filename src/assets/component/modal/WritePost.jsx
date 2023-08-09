@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import close from "../../images/modal_close.svg";
 
 const WritePost = ({ closeBtn, completeBtn }) => {
@@ -48,6 +49,7 @@ const Header = styled.div`
   border-radius: 20px 20px 0px 0px;
   padding: 10px;
   border-bottom: 1px solid #d3d3d3;
+  margin-bottom: 20px;
 `;
 
 const CancelButton = styled.button`

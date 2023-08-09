@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import BoardPost from "../../component/BoardPost";
 import MypageHeader from "../../component/MypageHeader";
 

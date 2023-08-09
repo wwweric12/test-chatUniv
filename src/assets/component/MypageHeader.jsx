@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import goBackSrc from "../images/goBack.svg";
 import { Link } from "react-router-dom";
+
+import goBackSrc from "../images/goBack.svg";
 
 const MypageHeader = ({ title }) => {
   return (
