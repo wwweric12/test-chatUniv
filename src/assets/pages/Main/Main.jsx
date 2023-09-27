@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import SmallButton from "../../component/SmallButton";
 import Search from "../../component/Search";
 import CreateChat from "../../component/modal/CreateChat";
@@ -120,14 +119,11 @@ const BLayout = styled.div`
 `;
 
 const ListBox = styled.div`
-  display: flex;
-  padding: 10px 0px;
-  flex-direction: column;
-  gap: 15px;
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  padding: 10px 20px;
+  gap: 30px;
   align-self: stretch;
-  overflow-y: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     width: 0;
