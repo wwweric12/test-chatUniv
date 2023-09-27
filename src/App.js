@@ -12,7 +12,6 @@ import Login from "./assets/pages/Login/Login";
 import Join from "./assets/pages/Join/Join";
 import Main from "./assets/pages/Main/Main";
 import Lanking from "./assets/pages/Statistics/Lanking";
-import EditProfile from "./assets/pages/Mypage/EditProfile";
 import Mypage from "./assets/pages/Mypage/Mypage";
 import BoardList from "./assets/pages/Mypage/BoardList";
 import Chatting from "./assets/pages/Chat/Chatting";
@@ -39,7 +38,6 @@ const App = () => {
                     <Route path="/mypage" element={<Mypage />} />
                     <Route path="/chatting/:id" element={<Chatting />} />
                   </Route>
-                  <Route path="/mypage/editprofile" element={<EditProfile />} />
                   <Route path="/mypage/boardlist" element={<BoardList />} />
                   <Route path="/mypage/comment" element={<CommentHistory />} />
                   <Route path="/mypage/mychatlist" element={<MyChatList />} />
