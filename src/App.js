@@ -38,7 +38,7 @@ const App = () => {
                     <Route path="/mypage" element={<Mypage />} />
                     <Route path="/chatting/:id" element={<Chatting />} />
                   </Route>
-                  <Route path="/mypage/boardlist" element={<BoardList />} />
+                  {/* <Route path="/mypage/boardlist" element={<BoardList />} /> */}
                   <Route path="/mypage/comment" element={<CommentHistory />} />
                   <Route path="/mypage/mychatlist" element={<MyChatList />} />
                 </Routes>
