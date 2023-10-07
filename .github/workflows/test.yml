@@ -29,10 +29,9 @@ jobs:                                # Job 설정
               echo "$AWS_SSH_KEY" > ssh_key.pem
               chmod 600 ssh_key.pem
               ssh -i ssh_key.pem ubuntu@${{ secrets.AWS_SSH_HOST }}
-              script: |
-                cd git/test-chatUniv
-                yarn install
-                yarn start
+              cd git/test-chatUniv
+              yarn install
+              yarn start
   
         - name: Remove Github Actions IP From Security Group
           run: |
