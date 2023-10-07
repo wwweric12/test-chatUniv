@@ -41,7 +41,7 @@ jobs:                                # Job 설정
           with:
             aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-            aws-region: us-east-1d
+            aws-region: ap-northeast-2
 
         - name: Add Github Actions IP to Security group
           run: |
