@@ -57,6 +57,7 @@ jobs:                                # Job 설정
             script_stop: true
             script: |
               cd git/test-chatUniv
+              yarn install
               yarn start
   
         - name: Remove Github Actions IP From Security Group
