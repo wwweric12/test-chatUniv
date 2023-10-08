@@ -29,7 +29,7 @@ jobs:                                # Job 설정
         - name: run
           run: |
               cd test-chatUniv
-              git pull develop
+              git pull origin develop
               yarn install
               yarn start
   
