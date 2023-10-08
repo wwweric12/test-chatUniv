@@ -28,11 +28,13 @@ jobs:                                # Job 설정
   
         - name: run
           run: |
-              kill -9 `cat save_pid.txt`
-              rm save_pid.txt
               cd test-chatUniv
               git pull origin develop
               yarn install
+              if [ -f save_pid.txt ]; then
+                kill -9 `cat save_pid.txt`
+                rm save_pid.txt
+              fi  
               nohup yarn start > my.log 2>&1 &
               echo $! > save_pid.txt
   
