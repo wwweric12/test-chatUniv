@@ -24,12 +24,10 @@ jobs:                                # Job 설정
           run: |
             aws ec2 authorize-security-group-ingress --group-id ${{ secrets.AWS_SG_ID }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
   
-        - name: SSH Commands
+        - name: run
           run: |
-              echo "$AWS_SSH_KEY" > ssh_key.pem
-              chmod 600 ssh_key.pem
-              ssh -i ssh_key.pem ubuntu@${{ secrets.AWS_SSH_HOST }}
               cd git/test-chatUniv
+              git pull develop
               yarn install
               yarn start
   
