@@ -32,7 +32,7 @@ jobs:                                # Job 설정
               git pull origin develop
               yarn install
               if [ -f save_pid.txt ]; then
-                kill -9 `cat save_pid.txt`
+                kill -9 $(ps -ef | grep start | awk '{print $2}')
                 rm save_pid.txt
               fi  
               nohup yarn start > my.log 2>&1 &
