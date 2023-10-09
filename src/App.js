@@ -30,9 +30,9 @@ const App = () => {
                 <Routes>
                   <Route element={<HeaderLayout />}>
                     <Route path="/board/:id" element={<Detail />} />
-                    {/* <Route path="/board" element={<Post />} /> */}
+                    <Route path="/board" element={<Post />} />
                     <Route path="/" element={<Main />} />
-                    {/* <Route path="/lanking" element={<Lanking />} /> */}
+                    <Route path="/lanking" element={<Lanking />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/join" element={<Join />} />
                     <Route path="/mypage" element={<Mypage />} />
