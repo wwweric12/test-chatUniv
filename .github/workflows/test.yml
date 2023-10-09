@@ -31,12 +31,11 @@ jobs:                                # Job 설정
               cd test-chatUniv
               git pull origin develop
               yarn install
-              if [ -f save_pid.txt ]; then
-                kill -9 $(ps -ef | grep start | awk '{print $2}')
-                rm save_pid.txt
+              if netstat -lntp | grep -q ':3000 '; then
+                fuser -k 3000/tcp
               fi  
-              nohup yarn start > my.log 2>&1 &
-              echo $! > save_pid.txt
+              nohup yarn start 
+            
   
         # - name: Remove Github Actions IP From Security Group
         #   run: |
