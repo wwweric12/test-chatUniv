@@ -23,6 +23,7 @@ jobs:                                # Job 설정
           env:
               RUNNER_TRACKING_ID: ""
           run : |
+              cd test-chatUniv
               nohup yarn start &
             
   
