@@ -34,7 +34,7 @@ jobs:                                # Job 설정
               if netstat -lntp | grep -q ':3000 '; then
                 fuser -k 3000/tcp
               fi  
-              nohup yarn start 
+              nohup yarn start &
             
   
         # - name: Remove Github Actions IP From Security Group
