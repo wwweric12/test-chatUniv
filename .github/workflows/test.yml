@@ -20,8 +20,8 @@ jobs:
           password: ${{secrets.DOCKER_PASSWORD}}
 
       - name: docker image container remove
-        run :  sudo docker rm `docker ps -a -q`;
-               sudo docker rmi $(sudo docker images -q)
+        run : CONTAINER_IDS=$(sudo docker ps -a -q)
+              sudo docker rm $CONTAINER_IDS; sudo docker rmi $(sudo docker images -q)
           
       - name: docker image build
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{secrets.IMAGE_NAME}}:${{secrets.IMAGE_TAG}} .
