@@ -20,10 +20,10 @@ jobs:                                # Job 설정
         run: |
             killall -9 node || true
             
-      - name: build
+      - name: build univ
         run: |
             cd test-chatUniv
-            git pull origin develop
+            # git pull origin develop
             yarn install
             yarn run build 
 
