@@ -37,8 +37,6 @@ jobs:                                # Job 설정
               working-directory: ../..
       steps:    
       - name : run new server
-        env:
-            RUNNER_TRACKING_ID: ""
         run : |
             cd test-chatUniv
             pm2 serve build 3000 --spa --name "test"
