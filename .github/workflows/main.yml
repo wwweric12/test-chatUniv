@@ -18,7 +18,7 @@ jobs:                                # Job 설정
           
       - name: Stop old server (ignore error)
         run: |
-            killall -9 node || true
+            pm2 stop test
             
       - name: build univ
         run: |
@@ -41,4 +41,4 @@ jobs:                                # Job 설정
             RUNNER_TRACKING_ID: ""
         run : |
             cd test-chatUniv
-            nohup serve -n -s build &
+            pm2 serve build 3000 --spa --name "test"
