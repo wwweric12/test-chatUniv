@@ -3,40 +3,49 @@ on:                                  # Event 감지
   push:
     branches:
       - develop
-jobs:                                # Job 설정
-   build:
-      name: CI
-      runs-on: self-hosted
-      defaults:
-          run:
-              working-directory: ../..
-      steps:
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: docker login
+        uses: docker/login-action@v2
         with:
-          node-version: 18.x
+          username: ${{secrets.DOCKER_USERNAME}}
+          password: ${{secrets.DOCKER_PASSWORD}}
           
-      - name: Stop old server (ignore error)
-        run: |
-            pm2 stop test
-            
-      - name: build univ
-        run: |
-            cd test-chatUniv
-            git pull origin develop
-            yarn install
-            yarn run build 
+      - name: docker image build
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/${{secrets.IMAGE_NAME}}:${{secrets.IMAGE_TAG}} .
 
-          
-   deploy:
-      needs: build
-      name: CD
-      runs-on: self-hosted
-      defaults:
+      - name: push image to Docker Hub
+        run: docker push ${{secrets.DOCKER_USERNAME}}/${{secrets.IMAGE_NAME}}:${{secrets.IMAGE_TAG}}
+        
+        
+  deploy:
+        needs: CI
+        name: CD
+        runs-on: self-hosted
+        defaults:
           run:
               working-directory: ../..
-      steps:    
-      - name : run new server
-        run : |
-            cd test-chatUniv
-            pm2 serve build 3000 --spa --name "test"
+              
+        steps:
+        - name: Log in to Docker Hub
+          uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+          with:
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+
+            
+        - name: docker stop container
+          run: |
+            sudo docker stop $(sudo docker ps -aq) || true
+        - name: pull image from docker hub
+          run: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/${{secrets.IMAGE_NAME}}:${{secrets.IMAGE_TAG}}
+        - name: docker run
+          run: |
+            docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/${{secrets.IMAGE_NAME}}:${{secrets.IMAGE_TAG}}
